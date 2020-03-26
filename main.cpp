@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "camera_control.h"
 
 #include <QApplication>
 

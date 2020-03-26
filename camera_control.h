@@ -1,10 +1,6 @@
 #ifndef CAMERA_CONTROL_H
 #define CAMERA_CONTROL_H
 
-#endif // CAMERA_CONTROL_H
-
-#pragma once
-
 #include <QImage>
 
 #include <opencv2/opencv.hpp>
@@ -16,7 +12,8 @@ enum cam_modes
     VGA_MODE = 640480
 };
 
-bool camera_init(
+/*
+bool set_camera(
         cv::VideoCapture* cap,
         cv::Mat& cameraMatrix,
         cv::Mat& distCoeffs,
@@ -52,12 +49,6 @@ bool camera_init(
         return false;
     }
     return true;
-}
+}*/
 
-QImage Mat2QImage(cv::Mat const& src)
-{
-     cv::Mat temp(src.cols,src.rows,src.type());
-     cv::cvtColor(src, src, cv::COLOR_BGR2RGB);
-     QImage dest= QImage((uchar*) src.data, src.cols, src.rows, src.step, QImage::Format_RGB888);
-     return dest;
-}
+#endif // CAMERA_CONTROL_H

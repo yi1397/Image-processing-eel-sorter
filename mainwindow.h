@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include <opencv2/opencv.hpp>
+#include <camera_control.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +19,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void update_cam();
 
 private:
     Ui::MainWindow *ui;

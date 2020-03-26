@@ -3,6 +3,10 @@
 
 #endif // CAMERA_CONTROL_H
 
+#pragma once
+
+#include <QImage>
+
 #include <opencv2/opencv.hpp>
 
 enum cam_modes
@@ -19,7 +23,12 @@ bool camera_init(
         cam_modes cam_mode
         )
 {
-    *cap = cv::VideoCapture(1 + cv::CAP_DSHOW);
+    *cap = cv::VideoCapture(0 + cv::CAP_DSHOW);
+    if (!cap->isOpened())
+            //카메라 연결 실패
+        {
+            return false;
+        }
     switch (cam_mode) {
     case qVGA_MODE:
     {
@@ -43,4 +52,12 @@ bool camera_init(
         return false;
     }
     return true;
+}
+
+QImage Mat2QImage(cv::Mat const& src)
+{
+     cv::Mat temp(src.cols,src.rows,src.type());
+     cv::cvtColor(src, src, cv::COLOR_BGR2RGB);
+     QImage dest= QImage((uchar*) src.data, src.cols, src.rows, src.step, QImage::Format_RGB888);
+     return dest;
 }

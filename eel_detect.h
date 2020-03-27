@@ -14,4 +14,7 @@ typedef struct _eel_data {
 
 } eel_data;
 
+inline int calc_dist(cv::Point& A, cv::Point& B);
+// cv::Point 구조체를 파라미터로 받아서 두 cv::Point의 거리를 측정하는 함수
+
 #endif // EEL_DETECT_H

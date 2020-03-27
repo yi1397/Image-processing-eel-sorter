@@ -1,5 +1,7 @@
 #include "eel_detect.h"
 
+float px_to_cm_ratio = 1; // 1cm가 몇 픽셀인지 저장하는 변수
+
 inline int calc_dist(cv::Point& A, cv::Point& B)
 // cv::Point 구조체를 파라미터로 받아서 두 cv::Point의 거리를 측정하는 함수
 {
@@ -14,7 +16,6 @@ eel_data detect_eel(
     cv::Mat& input, // 입력된 이미지
     int brightness, // 감지할 밝기 문턱값
     int saturation // 감지할 채도 문턱값
-    //Histogram1D& h // Histogram을 이용한 장어 감지를 위한 클래스(아직 기능을 추가하지 않음)
 )
 // 장어의 길이를 감지하고 결과 이미지를 출력해주는 함수
 {
@@ -112,39 +113,20 @@ eel_data detect_eel(
         min_dist = sqrt(min_dist);
         // 장어의 두께를 계산
 
-        cv::line(detect, minA, minB, cv::Scalar(255, 0, 0), 2);
+        cv::line(input, minA, minB, cv::Scalar(255, 0, 0), 2);
         // 결과 이미지에 minA와 minB 사이를 표시해줌
-
-        cv::putText(detect, std::to_string(round(min_dist / px_to_cm_ratio * 10) / 10),
-            cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0, 0, 255), 2);
-        // 결과 이미지에 두께를 표시해줌
 
         length = round(detect_area / min_dist / px_to_cm_ratio);
         // 길이를 계산함
 
-        cv::putText(input, std::to_string(length),
-            cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(255, 0, 0), 2);
-        // 결과 이미지에 길이를 표시해줌
-
-        std::cout << "길이:" << length << "cm" << std::endl;
-        // 콘솔창에 길이를 출력
     }
 
-    cv::cvtColor(threshold_img, threshold_img, cv::COLOR_GRAY2BGR);
-    // 결과 이미지를 컬러로 변환
 
-    cv::drawContours(threshold_img, contours, max_contour,
+    cv::drawContours(input, contours, max_contour,
         cv::Scalar(255, 0, 0), 2, 8, hierarchy, 0, cv::Point());
     // 결과 이미지에 장어 윤곽선을 표시해줌
 
-    cv::drawContours(detect, contours, max_contour,
-        cv::Scalar(0, 0, 255), 1, 8, hierarchy, 0, cv::Point());
-    // 결과 이미지에 장어 윤곽선을 표시해줌
+    float area = round(detect_area / px_to_cm_ratio / px_to_cm_ratio);
 
-    cv::putText(threshold_img,
-        std::to_string(round(detect_area / px_to_cm_ratio / px_to_cm_ratio)),
-        cv::Point(50, 50), cv::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0, 0, 255), 2);
-    // 결과 이미지에 장어의 면적을 표시해줌
-
-    return eel_data(success, length);
+    return eel_data(true, length, area);
 }

@@ -9,9 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     timer = new QTimer(this);
 
-    bool success = true;
+    bool success = false;
 
-    main_cap = cv::VideoCapture(0 + cv::CAP_DSHOW);
+
+
+    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 
     if(success)
     {

@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     camera_control.cpp \
+    eel_detect.cpp \
     main.cpp \
     mainwindow.cpp
 

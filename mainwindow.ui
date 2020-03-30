@@ -27,34 +27,56 @@
      <string>show_img</string>
     </property>
    </widget>
-   <widget class="QLabel" name="length_label">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>530</y>
-      <width>351</width>
-      <height>51</height>
+      <x>20</x>
+      <y>470</y>
+      <width>531</width>
+      <height>191</height>
      </rect>
     </property>
-    <property name="text">
-     <string>show_length</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="time_label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>590</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>show_time</string>
-    </property>
+    <layout class="QVBoxLayout" name="data_box1">
+     <item>
+      <layout class="QHBoxLayout" name="data_box2">
+       <item>
+        <widget class="QLabel" name="time_name">
+         <property name="text">
+          <string>측정 시간</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="time_show">
+         <property name="text">
+          <string>show_time</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="length_name">
+         <property name="text">
+          <string>길이</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="length_show">
+         <property name="text">
+          <string>show_length</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

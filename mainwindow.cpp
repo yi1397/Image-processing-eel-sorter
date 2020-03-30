@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+    #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -11,8 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     bool success = false;
 
-    ui->length_label->setFont(QFont("맑은 고딕", 18));
-    ui->time_label->setFont(QFont("맑은 고딕", 18));
+    ui->time_name->setFont(QFont("맑은 고딕", 18));
+    ui->time_show->setFont(QFont("맑은 고딕", 18));
+    ui->length_name->setFont(QFont("맑은 고딕", 18));
+    ui->length_show->setFont(QFont("맑은 고딕", 18));
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 
@@ -47,7 +49,7 @@ void MainWindow::update_cam()
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img));
     ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
-    ui->length_label->setText(QString("길이 : %1").arg(detection_result.length));
+    ui->length_show->setText(QString("길이 : %1").arg(detection_result.length));
 
-    ui->time_label->setText("실행시간 : " + QString::number((double)detection_result.response_time/1000) + "초");
+    ui->time_show->setText("측정 시간 : " + QString::number((double)detection_result.response_time/1000) + "초");
 }

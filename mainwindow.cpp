@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     bool success = false;
 
+    ui->centralwidget->setStyleSheet("background-color : white");
+
     ui->time_name->setFont(QFont("맑은 고딕", 18));
     ui->time_name->setStyleSheet("background-color : #58D3F7;"
                                  "color : balck;"

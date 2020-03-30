@@ -19,51 +19,25 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>311</width>
-      <height>261</height>
+      <width>541</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>show_img</string>
     </property>
    </widget>
-   <widget class="QLabel" name="cam_label_2">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>10</y>
-      <width>311</width>
-      <height>261</height>
+      <x>20</x>
+      <y>470</y>
+      <width>161</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="cam_label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>270</y>
-      <width>311</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="cam_label_4">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>270</y>
-      <width>311</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
+     <string>show_length</string>
     </property>
    </widget>
   </widget>

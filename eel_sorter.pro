@@ -38,6 +38,8 @@ LIBS += -LC:\OpenCV-4.1.1\build\x64\vc16\lib \
     -lopencv_world411 \
     -lopencv_world411d
 
+QMAKE_CXXFLAGS += /utf-8
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

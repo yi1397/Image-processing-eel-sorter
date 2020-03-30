@@ -21,6 +21,10 @@ eel_data detect_eel(
 {
     bool success = false;
 
+    clock_t begin_t, end_t;
+
+    begin_t = clock();
+
     float length = 0; // 장어의 길이가 기억될 변수
 
     float detect_area = 0; // 장어의 면적이 기억될 변수
@@ -128,5 +132,7 @@ eel_data detect_eel(
 
     float area = round(detect_area / px_to_cm_ratio / px_to_cm_ratio);
 
-    return eel_data(true, length, area);
+    end_t = clock();
+
+    return eel_data(true, length, area, end_t - begin_t);
 }

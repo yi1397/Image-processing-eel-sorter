@@ -77,7 +77,7 @@ void MainWindow::update_cam()
 
     qt_cam_img = QImage((const unsigned char*) (cam_input.data), cam_input.cols, cam_input.rows, QImage::Format_RGB888);
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img).scaled(ui->cam_label->width(), ui->cam_label->height(), Qt::KeepAspectRatio));
-    ui->cam_label->resize(ui->cam_label->pixmap()->size());
+    //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
     ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
 

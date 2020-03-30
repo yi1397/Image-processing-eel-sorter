@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     bool success = false;
 
-
+    ui->length_label->setFont(QFont("맑은 고딕", 18));
+    ui->time_label->setFont(QFont("맑은 고딕", 18));
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 
@@ -48,5 +49,5 @@ void MainWindow::update_cam()
 
     ui->length_label->setText(QString("길이 : %1").arg(detection_result.length));
 
-    ui->time_label->setText(QString("실행시간 : %1").arg(detection_result.response_time));
+    ui->time_label->setText("실행시간 : " + QString::number((double)detection_result.response_time/1000) + "초");
 }

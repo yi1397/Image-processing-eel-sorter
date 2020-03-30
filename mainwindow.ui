@@ -32,12 +32,15 @@
      <rect>
       <x>30</x>
       <y>530</y>
-      <width>161</width>
+      <width>351</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>show_length</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
     </property>
    </widget>
    <widget class="QLabel" name="time_label">
@@ -45,7 +48,7 @@
      <rect>
       <x>30</x>
       <y>590</y>
-      <width>161</width>
+      <width>351</width>
       <height>51</height>
      </rect>
     </property>

@@ -27,11 +27,11 @@
      <string>show_img</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="length_label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>470</y>
+      <x>30</x>
+      <y>530</y>
       <width>161</width>
       <height>51</height>
      </rect>

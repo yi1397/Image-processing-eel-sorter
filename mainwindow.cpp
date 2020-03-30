@@ -42,4 +42,5 @@ void MainWindow::update_cam()
     qt_cam_img = QImage((const unsigned char*) (cam_input.data), cam_input.cols, cam_input.rows, QImage::Format_RGB888);
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img));
     ui->cam_label->resize(ui->cam_label->pixmap()->size());
+    ui->length_label->setText(QString("길이 : %1").arg(detection_result.length));
 }

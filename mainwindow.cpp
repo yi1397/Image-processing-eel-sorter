@@ -12,12 +12,16 @@ MainWindow::MainWindow(QWidget *parent)
     bool success = false;
 
     ui->time_name->setFont(QFont("맑은 고딕", 18));
+    ui->time_name->setStyleSheet("QLabel { background-color : #58D3F7; color : balck}");
     ui->time_name->setAlignment(Qt::AlignCenter);
     ui->time_show->setFont(QFont("맑은 고딕", 18));
+    ui->time_show->setStyleSheet("QLabel { background-color : #CEF6F5; color : balck}");
     ui->time_show->setAlignment(Qt::AlignCenter);
     ui->length_name->setFont(QFont("맑은 고딕", 18));
+    ui->length_name->setStyleSheet("QLabel { background-color : #58D3F7; color : balck}");
     ui->length_name->setAlignment(Qt::AlignCenter);
     ui->length_show->setFont(QFont("맑은 고딕", 18));
+    ui->length_show->setStyleSheet("QLabel { background-color : #CEF6F5; color : balck}");
     ui->length_show->setAlignment(Qt::AlignCenter);
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
@@ -50,7 +54,7 @@ void MainWindow::update_cam()
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
 
     qt_cam_img = QImage((const unsigned char*) (cam_input.data), cam_input.cols, cam_input.rows, QImage::Format_RGB888);
-    ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img));
+    ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img).scaled(ui->cam_label->width(), ui->cam_label->height(), Qt::KeepAspectRatio));
     ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
     ui->length_show->setText(QString("%1 ms").arg(detection_result.length));

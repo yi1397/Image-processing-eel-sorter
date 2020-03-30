@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>541</width>
-      <height>411</height>
+      <width>611</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="text">
@@ -30,9 +30,9 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>470</y>
-      <width>531</width>
+      <x>10</x>
+      <y>490</y>
+      <width>601</width>
       <height>191</height>
      </rect>
     </property>

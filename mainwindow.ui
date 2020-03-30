@@ -20,7 +20,7 @@
       <x>20</x>
       <y>10</y>
       <width>601</width>
-      <height>471</height>
+      <height>461</height>
      </rect>
     </property>
     <property name="text">
@@ -36,9 +36,9 @@
       <height>181</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="data_box1">
+    <layout class="QVBoxLayout" name="data_box">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="data_box1" stretch="1,2">
        <item>
         <widget class="QLabel" name="length_name">
          <property name="text">
@@ -59,7 +59,7 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="data_box2">
+      <layout class="QHBoxLayout" name="data_box2" stretch="1,2">
        <item>
         <widget class="QLabel" name="time_name">
          <property name="text">

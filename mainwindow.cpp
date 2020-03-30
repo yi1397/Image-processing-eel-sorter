@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
                                  "color : balck;"
                                  "border-style: solid;"
                                  "border-width: 2px;"
-                                 "border-color: white;"
+                                 "border-color: black;"
                                  "border-radius: 3px");
     ui->time_name->setAlignment(Qt::AlignCenter);
     ui->time_show->setFont(QFont("맑은 고딕", 18));
@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
                                  "color : balck;"
                                  "border-style: solid;"
                                  "border-width: 2px;"
-                                 "border-color: white;"
+                                 "border-color: black;"
                                  "border-radius: 3px");
     ui->time_show->setAlignment(Qt::AlignCenter);
     ui->length_name->setFont(QFont("맑은 고딕", 18));
@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
                                    "color : balck;"
                                    "border-style: solid;"
                                    "border-width: 2px;"
-                                   "border-color: white;"
+                                   "border-color: black;"
                                    "border-radius: 3px");
     ui->length_name->setAlignment(Qt::AlignCenter);
     ui->length_show->setFont(QFont("맑은 고딕", 18));
@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
                                    "color : balck;"
                                    "border-style: solid;"
                                    "border-width: 2px;"
-                                   "border-color: white;"
+                                   "border-color: black;"
                                    "border-radius: 3px");
     ui->length_show->setAlignment(Qt::AlignCenter);
 

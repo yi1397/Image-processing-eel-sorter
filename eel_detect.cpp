@@ -40,7 +40,7 @@ bool detect_eel(
         data_s[i] < saturation || data_v[i] < brightness ? cnt++ : 0;
     }
     if(size_to_detect < cnt) return true;
-    cv::putText(input, "NO detect", cv::Point(50,50), 1, 2, cv::Scalar(255, 0, 0));
+    //cv::putText(input, "NO detect", cv::Point(50,50), 1, 2, cv::Scalar(255, 0, 0));
     return false;
 }
 
@@ -150,7 +150,7 @@ eel_data measure_eel_length(
         min_dist = sqrt(min_dist);
         // 장어의 두께를 계산
 
-        cv::line(input, minA, minB, cv::Scalar(255, 0, 0), 2);
+        cv::line(input, minA, minB, cv::Scalar(0, 255, 0), 2);
         // 결과 이미지에 minA와 minB 사이를 표시해줌
 
         length = round(detect_area / min_dist / px_to_cm_ratio);

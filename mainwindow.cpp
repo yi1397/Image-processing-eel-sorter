@@ -76,6 +76,17 @@ void MainWindow::update_cam()
     {
         detection_result =
                 measure_eel_length(cam_input, 0, 160);
+
+        ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
+
+        ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
+    }
+
+    else
+    {
+        ui->length_show->setText(QString("감지 안됨").arg(detection_result.length));
+
+        ui->time_show->setText("감지 안됨");
     }
 
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
@@ -84,7 +95,4 @@ void MainWindow::update_cam()
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img).scaled(ui->cam_label->width(), ui->cam_label->height(), Qt::KeepAspectRatio));
     //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
-    ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
-
-    ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
 }

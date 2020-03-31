@@ -6,6 +6,7 @@
 
 #include "camera_control.h"
 #include "eel_detect.h"
+#include "setting_dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +27,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    setting_dialog *setting_dialo;
 
     QTimer *timer;
     cv::VideoCapture main_cap;

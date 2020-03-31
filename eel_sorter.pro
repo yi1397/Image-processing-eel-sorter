@@ -19,15 +19,18 @@ SOURCES += \
     camera_control.cpp \
     eel_detect.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    setting_dialog.cpp
 
 HEADERS += \
     camera_control.h \
     eel_detect.h \
-    mainwindow.h
+    mainwindow.h \
+    setting_dialog.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    setting_dialog.ui
 
 TRANSLATIONS += \
     eel_sorter_ko_KR.ts

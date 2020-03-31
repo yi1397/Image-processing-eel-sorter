@@ -63,7 +63,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
+    setting_dialo = new setting_dialog(this);
+    setting_dialo->setModal(true);
+    setting_dialo->show();
 }
 
 void MainWindow::update_cam()

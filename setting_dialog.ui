@@ -69,6 +69,37 @@
      </layout>
     </item>
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,1">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>배경 채도 문턱값</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1">
+        <item>
+         <widget class="QLineEdit" name="lineEdit_3"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>[ 160 정도 ]</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
       <item>
        <widget class="QLabel" name="label_4">
@@ -88,7 +119,7 @@
         <item>
          <widget class="QLabel" name="label_5">
           <property name="text">
-           <string>TextLabel</string>
+           <string>[ 10000 정도 ]</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -119,7 +150,7 @@
         <item>
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>[3정도]</string>
+           <string>[ 3 정도 ]</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>

@@ -72,8 +72,11 @@ void MainWindow::update_cam()
 {
     main_cap.read(cam_input);
 
-    detection_result =
-            detect_eel(cam_input, 160, 160);
+    if(detect_eel(cam_input, 0, 160, 10000))
+    {
+        detection_result =
+                measure_eel_length(cam_input, 0, 160);
+    }
 
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
 

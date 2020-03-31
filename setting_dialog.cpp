@@ -12,8 +12,3 @@ setting_dialog::~setting_dialog()
 {
     delete ui;
 }
-
-void setting_dialog::on_pushButton_clicked()
-{
-    // 파일 탐색기
-}

@@ -12,7 +12,40 @@ inline int calc_dist(cv::Point& A, cv::Point& B)
 
 }
 
-eel_data detect_eel(
+
+bool detect_eel(
+    cv::Mat& input,
+    int brightness, // 감지할 밝기 문턱값
+    int saturation, // 감지할 채도 문턱값
+    int size_to_detect
+)
+{
+    static cv::Mat hsv_img; // hsv형식의 색상 데이터가 저장될 cv::Mat 변수
+
+    cv::cvtColor(input, hsv_img, cv::COLOR_BGR2HSV);
+    // hsv_img변수에 cam_img의 데이터를 hsv형식으로 변환해서 저장
+
+    static cv::Mat channels[3]; // h, s, v 데이터를 각각 저장할 vector<Mat>선언
+    cv::split(hsv_img, channels); // channels에 h, s, v 데이터를 각각 저장함
+
+    uchar* data_s = (uchar*)channels[1].data; // channels[1] (채도 데이터)에 접근하기 위한 포인터
+    uchar* data_v = (uchar*)channels[2].data; // channels[2] (밝기 데이터)에 접근하기 위한 포인터
+    int data_len = input.rows * input.cols; // 입력받은 이미지의 크기
+
+    int cnt=0;
+
+    for (int i = data_len; i--;)
+        // hsv데이터를 읽고 이미지에서 장어와 비슷한 색상영역을 찾아내는 for문
+    {
+        data_s[i] < saturation || data_v[i] < brightness ? cnt++ : 0;
+    }
+    if(size_to_detect < cnt) return true;
+    cv::putText(input, "NO detect", cv::Point(50,50), 1, 2, cv::Scalar(255, 0, 0));
+    return false;
+}
+
+
+eel_data measure_eel_length(
     cv::Mat& input, // 입력된 이미지
     int brightness, // 감지할 밝기 문턱값
     int saturation // 감지할 채도 문턱값

@@ -7,179 +7,303 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>500</height>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>19</x>
-     <y>49</y>
+     <x>20</x>
+     <y>20</y>
      <width>461</width>
      <height>431</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1">
+   <property name="styleSheet">
+    <string notr="true">background-color : #f0f0f0
+</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>영상설정 </string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>451</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1">
       <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>해상도</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1">
         <item>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>해상도</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
           <item>
-           <property name="text">
-            <string>320*240</string>
-           </property>
+           <widget class="QComboBox" name="comboBox">
+            <property name="styleSheet">
+             <string notr="true">
+</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>320*240</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>640*480</string>
+             </property>
+            </item>
+           </widget>
           </item>
           <item>
-           <property name="text">
-            <string>640*480</string>
-           </property>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         </layout>
         </item>
        </layout>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,1">
       <item>
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>배경 채도 문턱값</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,1">
         <item>
-         <widget class="QLineEdit" name="lineEdit_3"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_7">
+         <widget class="QLabel" name="label_6">
           <property name="text">
-           <string>[ 160 정도 ]</string>
+           <string>배경 채도 문턱값</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_3">
+            <property name="styleSheet">
+             <string notr="true">background-color : white</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>[ 160 정도 ]</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
       <item>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>인식 최소 크기</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_5">
+         <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>[ 10000 정도 ]</string>
+           <string>최소 인식 크기</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="styleSheet">
+             <string notr="true">background-color : white</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>[ 10000 정도 ]</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
       <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>윤곽선 스무딩</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="label">
           <property name="text">
-           <string>[ 3 정도 ]</string>
+           <string>윤곽선 스무딩</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="styleSheet">
+             <string notr="true">background-color : white</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>[ 3 정도 ]</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </item>
      </layout>
-    </item>
-    <item>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>등급 분류</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>설정정보 관리</string>
+    </attribute>
+    <widget class="QWidget" name="horizontalLayoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>451</width>
+       <height>93</height>
+      </rect>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_10">
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
-         <string>파일 불러오기</string>
+         <string>설정 불러오기</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLineEdit" name="lineEdit_4">
+        <property name="styleSheet">
+         <string notr="true">background-color : white</string>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-   </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>370</y>
+       <width>451</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>설정 저장하기</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>330</y>
+       <width>451</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>설정 다른이름으로 저장</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>460</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>확인</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>460</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>취소</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>460</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>적용</string>
+   </property>
   </widget>
  </widget>
  <resources/>

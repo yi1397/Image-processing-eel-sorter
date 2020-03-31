@@ -25,7 +25,14 @@ typedef struct _eel_data {
 inline int calc_dist(cv::Point& A, cv::Point& B);
 // cv::Point 구조체를 파라미터로 받아서 두 cv::Point의 거리를 측정하는 함수
 
-eel_data detect_eel(
+bool detect_eel(
+    cv::Mat& input,
+    int brightness, // 감지할 밝기 문턱값
+    int saturation, // 감지할 채도 문턱값
+    int size_to_detect
+);
+
+eel_data measure_eel_length(
     cv::Mat& input, // 입력된 이미지
     int brightness, // 감지할 밝기 문턱값
     int saturation // 감지할 채도 문턱값

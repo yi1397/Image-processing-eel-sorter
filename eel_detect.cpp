@@ -135,7 +135,7 @@ eel_data measure_eel_length(
                 k = k < contour_count ? k : k - contour_count;
                 // k는 i의 반대지점에서 ± contour크기의 1/8 사이
 
-                int dist = calc_dist(contours[max_contour][i], contours[max_contour][k]);
+                auto dist = calc_dist(contours[max_contour][i], contours[max_contour][k]);
                 // 가장큰 contour의 i번째와 k번째 사이의 거리를 기억하는 변수
 
                 if (dist < min_dist) // dist가 최단거리이면

@@ -23,7 +23,9 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void update_cam();
+    void find_eel();
+
+    void update_eel();
 
 private:
     Ui::MainWindow *ui;
@@ -39,5 +41,9 @@ private:
 
     cv::Mat cameraMatrix = cv::Mat::eye(3, 3, CV_64FC1);
     cv::Mat distCoeffs = cv::Mat::zeros(1, 5, CV_64FC1);;
+
+    bool detected = false;
+
+    int detect_delay = 100;
 };
 #endif // MAINWINDOW_H

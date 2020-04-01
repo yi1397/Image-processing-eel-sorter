@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
                                  "border-color: black;"
                                  "border-radius: 3px");
     ui->time_name->setAlignment(Qt::AlignCenter);
+
     ui->time_show->setFont(QFont("맑은 고딕", 18));
     ui->time_show->setStyleSheet("background-color : #CEF6F5;"
                                  "color : balck;"
@@ -29,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
                                  "border-color: black;"
                                  "border-radius: 3px");
     ui->time_show->setAlignment(Qt::AlignCenter);
+
     ui->length_name->setFont(QFont("맑은 고딕", 18));
     ui->length_name->setStyleSheet("background-color : #58D3F7;"
                                    "color : balck;"
@@ -37,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
                                    "border-color: black;"
                                    "border-radius: 3px");
     ui->length_name->setAlignment(Qt::AlignCenter);
+
     ui->length_show->setFont(QFont("맑은 고딕", 18));
     ui->length_show->setStyleSheet("background-color : #CEF6F5;"
                                    "color : balck;"
@@ -50,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     if(success)
     {
-        connect(timer, SIGNAL(timeout()), this, SLOT(update_cam()));
+        connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
         timer->start(10);
     }
 }
@@ -68,26 +71,29 @@ void MainWindow::on_pushButton_clicked()
     setting_dialo->show();
 }
 
-void MainWindow::update_cam()
+void MainWindow::find_eel()
 {
     main_cap.read(cam_input);
 
-    if(detect_eel(cam_input, 0, 160, 10000))
+    if(detect_eel(cam_input, 0, 160, 10000) && !detected)
     {
-        detection_result =
-                measure_eel_length(cam_input, 0, 160);
+        detected = true;
+        QTimer::singleShot(detect_delay, this, SLOT(update_eel()));
 
-        ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
-
-        ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
     }
 
-    else
-    {
-        ui->length_show->setText(QString("감지 안됨").arg(detection_result.length));
+}
 
-        ui->time_show->setText("감지 안됨");
-    }
+void MainWindow::update_eel()
+{
+    main_cap.read(cam_input);
+
+    detection_result =
+            measure_eel_length(cam_input, 0, 160);
+
+    ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
+
+    ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
 
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
 
@@ -95,4 +101,5 @@ void MainWindow::update_cam()
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img).scaled(ui->cam_label->width(), ui->cam_label->height(), Qt::KeepAspectRatio));
     //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
+    detected = false;
 }

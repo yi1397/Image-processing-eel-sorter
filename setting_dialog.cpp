@@ -18,7 +18,7 @@ void setting_dialog::get_setting_data(setting_data *set)
     set->detect_delay = ui->lineEdit_detect_delay->text().toUInt();
 }
 
-void setting_dialog::on_confirm_Button_clicked()
+void setting_dialog::apply_setting()
 {
     setting_data user_setting;
 
@@ -27,4 +27,15 @@ void setting_dialog::on_confirm_Button_clicked()
     connect(this,SIGNAL(send_setting(setting_data)), parent(), SLOT(get_setting(setting_data)));
 
     emit send_setting(user_setting);
+}
+
+void setting_dialog::on_pushButton_apply_clicked()
+{
+    apply_setting();
+}
+
+void setting_dialog::on_push_Button_confirm_clicked()
+{
+    apply_setting();
+    this->close();
 }

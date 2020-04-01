@@ -300,7 +300,7 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="confirm_Button">
+  <widget class="QPushButton" name="push_Button_confirm">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -326,7 +326,7 @@
     <string>취소</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="pushButton_apply">
    <property name="geometry">
     <rect>
      <x>180</x>

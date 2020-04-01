@@ -21,12 +21,17 @@ public:
     ~setting_dialog();
 
 private slots:
-    void on_confirm_Button_clicked();
+
+    void on_pushButton_apply_clicked();
+
+    void on_push_Button_confirm_clicked();
 
 private:
     Ui::setting_dialog *ui;
 
     void get_setting_data(setting_data *set);
+
+    void apply_setting();
 };
 
 #endif // SETTING_DIALOG_H

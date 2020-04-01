@@ -1,4 +1,4 @@
-    #include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -70,6 +70,13 @@ void MainWindow::on_pushButton_clicked()
     setting_dialo->setModal(true);
     setting_dialo->show();
 }
+
+
+void MainWindow::get_setting(int value)
+{
+    detect_delay = value;
+}
+
 
 void MainWindow::find_eel()
 {

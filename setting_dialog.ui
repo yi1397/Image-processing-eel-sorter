@@ -300,7 +300,7 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="confirm_Button">
    <property name="geometry">
     <rect>
      <x>380</x>

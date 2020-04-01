@@ -20,6 +20,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void get_setting(int value);
+
 private slots:
     void on_pushButton_clicked();
 

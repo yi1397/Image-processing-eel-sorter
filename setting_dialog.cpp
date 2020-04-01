@@ -12,3 +12,12 @@ setting_dialog::~setting_dialog()
 {
     delete ui;
 }
+
+
+
+void setting_dialog::on_confirm_Button_clicked()
+{
+    connect(this,SIGNAL(send_setting(int)), parent(), SLOT(get_setting(int)));
+
+    emit send_setting(1000);
+}

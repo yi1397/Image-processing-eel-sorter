@@ -166,7 +166,7 @@
         <item>
          <widget class="QLabel" name="label_8">
           <property name="text">
-           <string>인식과 측정의 딜레이(ms)</string>
+           <string>측정 딜레이(ms)</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -176,7 +176,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,1">
           <item>
-           <widget class="QLineEdit" name="lineEdit_5">
+           <widget class="QLineEdit" name="lineEdit_detect_delay">
             <property name="styleSheet">
              <string notr="true">background-color : white</string>
             </property>

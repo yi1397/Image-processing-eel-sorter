@@ -74,7 +74,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::get_setting(setting_data set)
 {
-
+    user_setting = set;
 }
 
 
@@ -85,7 +85,7 @@ void MainWindow::find_eel()
     if(detect_eel(cam_input, 0, 160, 10000) && !detected)
     {
         detected = true;
-        QTimer::singleShot(detect_delay, this, SLOT(update_eel()));
+        QTimer::singleShot(user_setting.detect_delay, this, SLOT(update_eel()));
 
     }
 

@@ -34,6 +34,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
+    setting_data user_setting;
+
     setting_dialog *setting_dialo;
 
     QTimer *timer;
@@ -47,7 +49,5 @@ private:
     cv::Mat distCoeffs = cv::Mat::zeros(1, 5, CV_64FC1);;
 
     bool detected = false;
-
-    int detect_delay = 100;
 };
 #endif // MAINWINDOW_H

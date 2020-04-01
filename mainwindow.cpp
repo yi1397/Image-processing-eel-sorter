@@ -64,14 +64,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{
-    setting_dialo = new setting_dialog(this);
-    setting_dialo->setModal(true);
-    setting_dialo->show();
-}
-
-
 void MainWindow::get_setting(setting_data set)
 {
     user_setting = set;
@@ -109,4 +101,15 @@ void MainWindow::update_eel()
     //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
     detected = false;
+}
+
+void MainWindow::on_pushButton_setting_clicked()
+{
+    setting_dialo = new setting_dialog(this);
+    setting_dialo->setModal(true);
+    setting_dialo->show();
+
+    connect(this,SIGNAL(send_setting(setting_data)), setting_dialo, SLOT(get_setting_from_Mainwindow(setting_data)));
+
+    emit send_setting(user_setting);
 }

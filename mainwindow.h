@@ -17,6 +17,9 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void send_setting(setting_data set);
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -25,11 +28,11 @@ public slots:
     void get_setting(setting_data set);
 
 private slots:
-    void on_pushButton_clicked();
-
     void find_eel();
 
     void update_eel();
+
+    void on_pushButton_setting_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -13,16 +13,21 @@ setting_dialog::~setting_dialog()
     delete ui;
 }
 
-void setting_dialog::get_setting_data(setting_data *set)
+void setting_dialog::get_setting_from_Mainwindow(setting_data set)
+{
+    user_setting = set;
+
+    ui->lineEdit_detect_delay->setText(QString::number(user_setting.detect_delay));
+}
+
+void setting_dialog::get_setting_from_input(setting_data *set)
 {
     set->detect_delay = ui->lineEdit_detect_delay->text().toUInt();
 }
 
 void setting_dialog::apply_setting()
 {
-    setting_data user_setting;
-
-    get_setting_data(&user_setting);
+    get_setting_from_input(&user_setting);
 
     connect(this,SIGNAL(send_setting(setting_data)), parent(), SLOT(get_setting(setting_data)));
 

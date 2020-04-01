@@ -16,6 +16,9 @@ class setting_dialog : public QDialog
 signals:
     void send_setting(setting_data set);
 
+public slots:
+    void get_setting_from_Mainwindow(setting_data set);
+
 public:
     explicit setting_dialog(QWidget *parent = nullptr);
     ~setting_dialog();
@@ -29,7 +32,9 @@ private slots:
 private:
     Ui::setting_dialog *ui;
 
-    void get_setting_data(setting_data *set);
+    setting_data user_setting;
+
+    void get_setting_from_input(setting_data *set);
 
     void apply_setting();
 };

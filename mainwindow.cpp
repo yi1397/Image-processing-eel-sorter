@@ -72,9 +72,9 @@ void MainWindow::on_pushButton_clicked()
 }
 
 
-void MainWindow::get_setting(int value)
+void MainWindow::get_setting(setting_data set)
 {
-    detect_delay = value;
+
 }
 
 

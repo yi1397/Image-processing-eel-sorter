@@ -7,6 +7,7 @@
 #include "camera_control.h"
 #include "eel_detect.h"
 #include "setting_dialog.h"
+#include "setting_control.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,7 +22,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void get_setting(int value);
+    void get_setting(setting_data set);
 
 private slots:
     void on_pushButton_clicked();

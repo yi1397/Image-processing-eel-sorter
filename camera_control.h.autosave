@@ -5,7 +5,7 @@
 
 #include <opencv2/opencv.hpp>
 
-#include "setting_dialog.h"
+#include "setting_control.h"
 
 bool camera_init(
         cv::VideoCapture* cap,

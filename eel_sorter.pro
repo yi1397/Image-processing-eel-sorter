@@ -26,6 +26,7 @@ HEADERS += \
     camera_control.h \
     eel_detect.h \
     mainwindow.h \
+    setting_control.h \
     setting_dialog.h
 
 FORMS += \

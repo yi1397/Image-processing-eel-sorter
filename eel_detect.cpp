@@ -16,9 +16,7 @@ inline auto calc_dist(T_P& A, T_P& B) -> decltype (T_P().x + T_P().y)
 
 bool detect_eel(
     cv::Mat& input,
-    int brightness, // 감지할 밝기 문턱값
-    int saturation, // 감지할 채도 문턱값
-    int size_to_detect
+    setting_data* set
 )
 {
     static cv::Mat hsv_img; // hsv형식의 색상 데이터가 저장될 cv::Mat 변수
@@ -38,9 +36,9 @@ bool detect_eel(
     for (int i = data_len; i--;)
         // hsv데이터를 읽고 이미지에서 장어와 비슷한 색상영역을 찾아내는 for문
     {
-        data_s[i] < saturation || data_v[i] < brightness ? cnt++ : 0;
+        data_s[i] < set->saturation || data_v[i] < set->brightness ? cnt++ : 0;
     }
-    if(size_to_detect < cnt) return true;
+    if(set->min_size_to_detect < cnt) return true;
     //cv::putText(input, "NO detect", cv::Point(50,50), 1, 2, cv::Scalar(255, 0, 0));
     return false;
 }
@@ -48,8 +46,7 @@ bool detect_eel(
 
 eel_data measure_eel_length(
     cv::Mat& input, // 입력된 이미지
-    int brightness, // 감지할 밝기 문턱값
-    int saturation // 감지할 채도 문턱값
+    setting_data* set
 )
 // 장어의 길이를 감지하고 결과 이미지를 출력해주는 함수
 {
@@ -88,7 +85,7 @@ eel_data measure_eel_length(
     for (int i = data_len; i--;)
         // hsv데이터를 읽고 이미지에서 장어와 비슷한 색상영역을 찾아내는 for문
     {
-        fixed_data[i] = data_s[i] < saturation || data_v[i] < brightness ? 255u : 0u;
+        fixed_data[i] = data_s[i] < set->saturation || data_v[i] < set->brightness ? 255u : 0u;
         //장어와 비슷한 색상 영역은 255u, 그렇지 않은 영역은 0u으로 저장
     }
 

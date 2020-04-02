@@ -3,6 +3,8 @@
 
 #include <opencv2/opencv.hpp>
 
+#include "setting_control.h"
+
 typedef struct _eel_data {
     bool success;
     float length;
@@ -37,8 +39,7 @@ bool detect_eel(
 
 eel_data measure_eel_length(
     cv::Mat& input, // 입력된 이미지
-    int brightness, // 감지할 밝기 문턱값
-    int saturation // 감지할 채도 문턱값
+    setting_data* set
 );
 
 #endif // EEL_DETECT_H

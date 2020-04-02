@@ -20,6 +20,7 @@ SOURCES += \
     eel_detect.cpp \
     main.cpp \
     mainwindow.cpp \
+    setting_control.cpp \
     setting_dialog.cpp
 
 HEADERS += \

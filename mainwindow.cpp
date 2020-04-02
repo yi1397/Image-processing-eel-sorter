@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->time_show->setFont(QFont("맑은 고딕", 18));
     ui->length_name->setFont(QFont("맑은 고딕", 18));
     ui->length_show->setFont(QFont("맑은 고딕", 18));
+
+    setting_file_find("./set.dat");
+
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 
     if(success)

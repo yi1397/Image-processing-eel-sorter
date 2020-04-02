@@ -58,7 +58,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
           <item>
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="comboBox_cam_mode">
             <property name="styleSheet">
              <string notr="true"/>
             </property>

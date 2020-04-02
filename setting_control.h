@@ -35,5 +35,8 @@ typedef struct _setting_data
 
 } setting_data;
 
+void make_setting_file();
+
+setting_data get_setting_file(const char* path);
 
 #endif // SETTING_CONTROL_H

@@ -44,3 +44,8 @@ void setting_dialog::on_push_Button_confirm_clicked()
     apply_setting();
     this->close();
 }
+
+void setting_dialog::on_pushButton_cancel_clicked()
+{
+    this->close();
+}

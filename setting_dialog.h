@@ -29,6 +29,8 @@ private slots:
 
     void on_push_Button_confirm_clicked();
 
+    void on_pushButton_cancel_clicked();
+
 private:
     Ui::setting_dialog *ui;
 

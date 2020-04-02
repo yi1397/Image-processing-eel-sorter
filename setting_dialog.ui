@@ -313,7 +313,7 @@
     <string>확인</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="pushButton_cancel">
    <property name="geometry">
     <rect>
      <x>280</x>

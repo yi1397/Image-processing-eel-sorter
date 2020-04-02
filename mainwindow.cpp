@@ -42,7 +42,7 @@ void MainWindow::find_eel()
 {
     main_cap.read(cam_input);
 
-    if(detect_eel(cam_input, 0, 160, 10000) && !detected)
+    if(detect_eel(cam_input, &user_setting) && !detected)
     {
         detected = true;
         QTimer::singleShot(user_setting.detect_delay, this, SLOT(update_eel()));
@@ -56,7 +56,7 @@ void MainWindow::update_eel()
     main_cap.read(cam_input);
 
     detection_result =
-            measure_eel_length(cam_input, 0, 160);
+            measure_eel_length(cam_input, &user_setting);
 
     ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
 

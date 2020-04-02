@@ -2,6 +2,7 @@
 #define SETTING_DIALOG_H
 
 #include <QDialog>
+#include <QMessageBox>
 
 #include "setting_control.h"
 

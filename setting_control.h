@@ -12,6 +12,7 @@ typedef struct _setting_data
 {
     int detect_delay;
     int min_size_to_detect;
+    int smoothing;
     int brightness;
     int saturation;
     cam_modes cam_mode;
@@ -19,6 +20,7 @@ typedef struct _setting_data
     _setting_data() :
         detect_delay(100),
         min_size_to_detect(10000),
+        smoothing(3),
         brightness(0),
         saturation(160),
         cam_mode(VGA_MODE) {}
@@ -26,6 +28,7 @@ typedef struct _setting_data
     _setting_data(const _setting_data& tmp) :
         detect_delay(tmp.detect_delay),
         min_size_to_detect(tmp.min_size_to_detect),
+        smoothing(tmp.smoothing),
         brightness(tmp.brightness),
         saturation(tmp.saturation),
         cam_mode(tmp.cam_mode) {}

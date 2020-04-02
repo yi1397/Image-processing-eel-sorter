@@ -106,7 +106,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1">
           <item>
-           <widget class="QLineEdit" name="lineEdit_3">
+           <widget class="QLineEdit" name="lineEdit_detect_saturation">
             <property name="styleSheet">
              <string notr="true">background-color : white</string>
             </property>
@@ -141,7 +141,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="lineEdit_detect_size">
             <property name="styleSheet">
              <string notr="true">background-color : white</string>
             </property>
@@ -211,7 +211,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="lineEdit_detect_smoothing">
             <property name="styleSheet">
              <string notr="true">background-color : white</string>
             </property>

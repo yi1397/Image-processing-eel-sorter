@@ -68,7 +68,7 @@ eel_data measure_eel_length(
 
     static cv::Mat hsv_img; // hsv형식의 색상 데이터가 저장될 cv::Mat 변수
 
-    cv::medianBlur(input, input, 3);
+    cv::medianBlur(input, input, set->smoothing);
 
     cv::cvtColor(input, hsv_img, cv::COLOR_BGR2HSV);
     // hsv_img변수에 cam_img의 데이터를 hsv형식으로 변환해서 저장

@@ -31,9 +31,7 @@ inline auto calc_dist(T_P& A, T_P& B) -> decltype (T_P().x + T_P().y);
 
 bool detect_eel(
     cv::Mat& input,
-    int brightness, // 감지할 밝기 문턱값
-    int saturation, // 감지할 채도 문턱값
-    int size_to_detect
+    setting_data* set
 );
 
 

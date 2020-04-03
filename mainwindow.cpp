@@ -19,9 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->length_show->setFont(QFont("맑은 고딕", 18));
 
     try {
-        get_setting_from_file("./set.dat");
-    } catch (const char*) {
-        QMessageBox::information(NULL, "설정파일 없음", "설정파일을 재설정합니다");
+        user_setting = get_setting_from_file("D:/eel_sorter/eel_sorter/set.dat");
+    } catch (const char* e_message) {
+        QMessageBox::information(NULL, e_message, "설정파일을 재설정합니다");
     }
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     if(success)
     {
         connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
-        timer->start(10);
+        timer->start(0);
     }
 }
 

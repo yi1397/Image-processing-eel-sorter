@@ -29,7 +29,7 @@ setting_data get_setting_from_file(const char* path)
 {
     setting_data set;
     std::ifstream setting_file(path);
-    if(!setting_file.is_open())
+    if(setting_file.fail())
     {
         throw "파일이 없습니다";
     }
@@ -40,9 +40,16 @@ setting_data get_setting_from_file(const char* path)
 
     while(!setting_file.eof())
     {
-        std::string file_data;
-        setting_file>>file_data;
-        QMessageBox::information(NULL, "test", QString(file_data.c_str()));
+        std::string file_data_name;
+        int file_value;
+
+        setting_file>>file_data_name;
+        setting_file>>file_value;
+
+        if(string_to_value.count(file_data_name))
+        {
+            *(int*)string_to_value[file_data_name] = file_value;
+        }
     }
 
     return set;

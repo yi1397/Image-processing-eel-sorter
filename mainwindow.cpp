@@ -18,7 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->length_name->setFont(QFont("맑은 고딕", 18));
     ui->length_show->setFont(QFont("맑은 고딕", 18));
 
-    setting_file_find("./set.dat");
+    try {
+        get_setting_from_file("./set.dat");
+    } catch (const char*) {
+        QMessageBox::information(NULL, "설정파일 없음", "설정파일을 재설정합니다");
+    }
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 

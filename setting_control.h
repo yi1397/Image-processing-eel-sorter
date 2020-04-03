@@ -40,7 +40,10 @@ typedef struct _setting_data
 
 } setting_data;
 
-void string_to_ptr(std::map<std::string, void*> map, setting_data *set);
+void string_to_set_ptr(
+    std::map<std::string, void*>* map,
+    setting_data* set
+);
 
 void make_setting_file();
 

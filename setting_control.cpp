@@ -8,7 +8,7 @@ void make_setting_file()
 
 void string_to_set_ptr(
         std::map<std::string, void*>* map,
-        setting_data *set
+        setting_data* set
 )
 {
     map->insert(
@@ -34,9 +34,16 @@ setting_data get_setting_from_file(const char* path)
         throw "파일이 없습니다";
     }
 
-    std::map<int, void*> string_to_value;
+    std::map<std::string, void*> string_to_value;
 
+    string_to_set_ptr(&string_to_value, &set);
 
+    while(!setting_file.eof())
+    {
+        std::string file_data;
+        setting_file>>file_data;
+        QMessageBox::information(NULL, "test", QString(file_data.c_str()));
+    }
 
     return set;
 }

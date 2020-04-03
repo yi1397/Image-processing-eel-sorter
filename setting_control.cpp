@@ -1,23 +1,42 @@
 #include "setting_control.h"
 
-#include <QMessageBox>
-#include <fstream>
 
 void make_setting_file()
 {
 
 }
 
-setting_data get_setting_file(const char* path)
+void string_to_set_ptr(
+        std::map<std::string, void*>* map,
+        setting_data *set
+)
+{
+    map->insert(
+        std::make_pair("detect_delay",&set->detect_delay));
+    map->insert(
+        std::make_pair("min_size_to_detect",&set->min_size_to_detect));
+    map->insert(
+        std::make_pair("smoothing",&set->smoothing));
+    map->insert(
+        std::make_pair("brightness",&set->brightness));
+    map->insert(
+        std::make_pair("saturation",&set->saturation));
+    map->insert(
+        std::make_pair("cam_mode",&set->cam_mode));
+}
+
+setting_data get_setting_from_file(const char* path)
 {
     setting_data set;
     std::ifstream setting_file(path);
     if(!setting_file.is_open())
     {
-        QMessageBox::information(NULL, "올바르지않은 설정", "설정파일을 초기화 해야 합니다");
-        make_setting_file();
-        return set;
+        throw "파일이 없습니다";
     }
+
+    std::map<int, void*> string_to_value;
+
+
 
     return set;
 }

@@ -47,6 +47,7 @@ void MainWindow::get_setting(setting_data set)
 
 void MainWindow::find_eel()
 {
+    begin_t = clock();
     main_cap.read(cam_input);
 
     if(detect_eel(cam_input, &user_setting) && !detected)
@@ -60,14 +61,17 @@ void MainWindow::find_eel()
 
 void MainWindow::update_eel()
 {
-    main_cap.read(cam_input);
-
     detection_result =
             measure_eel_length(cam_input, &user_setting);
 
     ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
 
-    ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
+
+    end_t = clock();
+
+    ui->time_show->setText(QString::number((double)end_t - begin_t) + "초");
+
+    //ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
 
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
 

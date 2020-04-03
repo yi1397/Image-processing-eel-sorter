@@ -52,5 +52,7 @@ private:
     cv::Mat distCoeffs = cv::Mat::zeros(1, 5, CV_64FC1);;
 
     bool detected = false;
+
+    clock_t begin_t, end_t;
 };
 #endif // MAINWINDOW_H

@@ -69,9 +69,9 @@ void MainWindow::update_eel()
 
     end_t = clock();
 
-    ui->time_show->setText(QString::number((double)end_t - begin_t) + "초");
+    //ui->time_show->setText(QString::number((double)end_t - begin_t) + "초");
 
-    //ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
+    ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
 
     cv::cvtColor(cam_input, cam_input, cv::COLOR_BGR2RGB);
 

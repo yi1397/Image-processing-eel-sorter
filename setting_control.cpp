@@ -48,6 +48,11 @@ setting_data get_setting_from_file(const char* path)
 
         if(string_to_value.count(file_data_name))
         {
+            if(file_data_name == "smoothing")
+            {
+                if(file_value % 2 == 0) throw "설정값이 옳지 않습니다";
+            }
+
             *(int*)string_to_value[file_data_name] = file_value;
         }
     }

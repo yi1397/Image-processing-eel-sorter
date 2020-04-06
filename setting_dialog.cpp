@@ -13,7 +13,7 @@ setting_dialog::~setting_dialog()
     delete ui;
 }
 
-void setting_dialog::get_setting_from_Mainwindow(setting_data set)
+void setting_dialog::put_data_to_lineEdit(setting_data set)
 {
     user_setting = set;
 
@@ -69,5 +69,16 @@ void setting_dialog::on_push_Button_confirm_clicked()
 
     } catch (const char* e_message) {
         QMessageBox::information(this,"올바르지않은 설정", e_message);
+    }
+}
+
+void setting_dialog::on_pushButton_setting_load_clicked()
+{
+    QString path = QFileDialog::getOpenFileName(this, tr("Open File"), tr(""), tr("Text (*.dat)"));
+    try {
+        user_setting = get_setting_from_file(path.toStdString().c_str());
+        put_data_to_lineEdit(user_setting);
+    } catch (const char* e_message) {
+        QMessageBox::information(NULL, e_message, "파일이 잘못되었습니다");
     }
 }

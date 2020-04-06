@@ -1,6 +1,7 @@
 #ifndef SETTING_CONTROL_H
 #define SETTING_CONTROL_H
 
+#include <QFileDialog>
 #include <QMessageBox>
 #include <fstream>
 #include <map>

@@ -18,7 +18,7 @@ signals:
     void send_setting(setting_data set);
 
 public slots:
-    void get_setting_from_Mainwindow(setting_data set);
+    void put_data_to_lineEdit(setting_data set);
 
 public:
     explicit setting_dialog(QWidget *parent = nullptr);
@@ -29,6 +29,8 @@ private slots:
     void on_pushButton_apply_clicked();
 
     void on_push_Button_confirm_clicked();
+
+    void on_pushButton_setting_load_clicked();
 
 private:
     Ui::setting_dialog *ui;

@@ -1,6 +1,6 @@
 brightness 0
 cam_mode 640480
 detect_delay 100
-min_size_to_detect 1000
+min_size_to_detect 12345
 saturation 160
 smoothing 3

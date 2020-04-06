@@ -89,7 +89,7 @@ void MainWindow::on_pushButton_setting_clicked()
     setting_dialo->setModal(true);
     setting_dialo->show();
 
-    connect(this,SIGNAL(send_setting(setting_data)), setting_dialo, SLOT(get_setting_from_Mainwindow(setting_data)));
+    connect(this,SIGNAL(send_setting(setting_data)), setting_dialo, SLOT(put_data_to_lineEdit(setting_data)));
 
     emit send_setting(user_setting);
 }

@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
         user_setting = get_setting_from_file("D:/eel_sorter/eel_sorter/set.dat");
     } catch (const char* e_message) {
         QMessageBox::information(NULL, e_message, "설정파일을 재설정합니다");
+        make_setting_file("D:/eel_sorter/eel_sorter/set.dat", &user_setting);
     }
 
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);

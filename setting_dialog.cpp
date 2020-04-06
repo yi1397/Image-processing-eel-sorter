@@ -47,6 +47,8 @@ void setting_dialog::apply_setting()
     connect(this,SIGNAL(send_setting(setting_data)), parent(), SLOT(get_setting(setting_data)));
 
     emit send_setting(user_setting);
+
+    make_setting_file("D:/eel_sorter/eel_sorter/set.dat", &user_setting);
 }
 
 void setting_dialog::on_pushButton_apply_clicked()

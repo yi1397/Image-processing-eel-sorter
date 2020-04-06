@@ -59,3 +59,20 @@ setting_data get_setting_from_file(const char* path)
 
     return set;
 }
+
+void make_setting_file(const char* path, setting_data* set)
+{
+    std::ofstream setting_file(path);
+
+    std::map<std::string, void*> string_to_value;
+
+    string_to_set_ptr(&string_to_value, set);
+
+    for(auto data = string_to_value.begin();
+        data!=string_to_value.end();
+        data++)
+    {
+        setting_file << data->first << " "
+                     << *(int*)data->second << std::endl;
+    }
+}

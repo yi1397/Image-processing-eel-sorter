@@ -5,6 +5,7 @@
 #include <fstream>
 #include <map>
 
+
 enum cam_modes
 {
     NO_CAM_MODE = 0,
@@ -48,5 +49,7 @@ void string_to_set_ptr(
 void make_setting_file();
 
 setting_data get_setting_from_file(const char* path);
+
+void make_setting_file(const char* path, setting_data* set);
 
 #endif // SETTING_CONTROL_H

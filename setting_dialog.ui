@@ -27,7 +27,7 @@
 </string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -272,24 +272,11 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>370</y>
-       <width>451</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>설정 저장하기</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>330</y>
+       <y>370</y>
        <width>451</width>
        <height>28</height>
       </rect>

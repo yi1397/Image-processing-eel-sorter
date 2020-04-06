@@ -72,12 +72,18 @@ void setting_dialog::on_push_Button_confirm_clicked()
     }
 }
 
+void setting_dialog::on_pushButton_cancel_clicked()
+{
+    this->close();
+}
+
 void setting_dialog::on_pushButton_setting_load_clicked()
 {
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), tr(""), tr("Text (*.dat)"));
     try {
         user_setting = get_setting_from_file(path.toStdString().c_str());
         put_data_to_lineEdit(user_setting);
+        ui->lineEdit_loaded_setting->setText(path);
     } catch (const char* e_message) {
         QMessageBox::information(NULL, e_message, "파일이 잘못되었습니다");
     }

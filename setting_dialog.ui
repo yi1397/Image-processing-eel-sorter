@@ -261,7 +261,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4">
+       <widget class="QLineEdit" name="lineEdit_loaded_setting">
         <property name="styleSheet">
          <string notr="true">background-color : white</string>
         </property>

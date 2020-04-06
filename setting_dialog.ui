@@ -272,7 +272,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="pushButton_make_new_settingfile">
      <property name="geometry">
       <rect>
        <x>0</x>

@@ -79,7 +79,7 @@ void setting_dialog::on_pushButton_cancel_clicked()
 
 void setting_dialog::on_pushButton_setting_load_clicked()
 {
-    QString path = QFileDialog::getOpenFileName(this, tr("Open File"), tr(""), tr("Text (*.dat)"));
+    QString path = QFileDialog::getOpenFileName(this, "Open File", "", "설정파일 (*.dat)");
     try {
         user_setting = get_setting_from_file(path.toStdString().c_str());
         put_data_to_lineEdit(user_setting);
@@ -87,4 +87,16 @@ void setting_dialog::on_pushButton_setting_load_clicked()
     } catch (const char* e_message) {
         QMessageBox::information(NULL, e_message, "파일이 잘못되었습니다");
     }
+}
+
+void setting_dialog::on_pushButton_make_new_settingfile_clicked()
+{
+    QString path=QFileDialog::getSaveFileName(this,"다른이름으로 저장","", "설정파일 (*.dat)");
+    try {
+        get_setting_from_input(&user_setting);
+        make_setting_file(path.toStdString().c_str(), &user_setting);
+    } catch (const char* e_message) {
+        QMessageBox::information(NULL, e_message, "저장할수 없음");
+    }
+
 }

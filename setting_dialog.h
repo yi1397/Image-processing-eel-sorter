@@ -32,6 +32,10 @@ private slots:
 
     void on_pushButton_setting_load_clicked();
 
+    void on_pushButton_cancel_clicked();
+
+    void on_pushButton_make_new_settingfile_clicked();
+
 private:
     Ui::setting_dialog *ui;
 

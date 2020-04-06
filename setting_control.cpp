@@ -1,11 +1,5 @@
 #include "setting_control.h"
 
-
-void make_setting_file()
-{
-
-}
-
 void string_to_set_ptr(
         std::map<std::string, void*>* map,
         setting_data* set

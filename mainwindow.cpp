@@ -62,6 +62,10 @@ void MainWindow::find_eel()
 
 void MainWindow::update_eel()
 {
+    cv::Mat temp;
+    cv::undistort(cam_input, temp, cameraMatrix, distCoeffs);
+    cam_input = temp;
+
     detection_result =
             measure_eel_length(cam_input, &user_setting);
 

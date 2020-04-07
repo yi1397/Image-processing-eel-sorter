@@ -96,3 +96,8 @@ void MainWindow::on_pushButton_setting_clicked()
 
     emit send_setting(user_setting);
 }
+
+void MainWindow::count_eel(eel_data data)
+{
+
+}

@@ -27,113 +27,6 @@
      <string>show_img</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>490</y>
-      <width>601</width>
-      <height>181</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="data_box">
-     <item>
-      <layout class="QHBoxLayout" name="data_box1" stretch="1,2">
-       <item>
-        <widget class="QLabel" name="length_name">
-         <property name="styleSheet">
-          <string notr="true">background-color : #58D3F7;
-color : balck;
-border-style: solid;
-border-width: 2px;
-border-color: black;
-border-radius: 3px</string>
-         </property>
-         <property name="text">
-          <string>길이</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="length_show">
-         <property name="styleSheet">
-          <string notr="true">background-color : #CEF6F5;
-color : balck;
-border-style: solid;
-border-width: 2px;
-border-color: black;
-border-radius: 3px</string>
-         </property>
-         <property name="text">
-          <string>show_length</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="data_box2" stretch="1,2">
-       <item>
-        <widget class="QLabel" name="time_name">
-         <property name="styleSheet">
-          <string notr="true">background-color : #58D3F7;
-color : balck;
-border-style: solid;
-border-width: 2px;
-border-color: black;
-border-radius: 3px
-</string>
-         </property>
-         <property name="text">
-          <string>측정 시간</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="time_show">
-         <property name="styleSheet">
-          <string notr="true">background-color : #CEF6F5;
-color : balck;
-border-style: solid;
-border-width: 2px;
-border-color: black;
-border-radius: 3px
-</string>
-         </property>
-         <property name="text">
-          <string>show_time</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>10</y>
-      <width>501</width>
-      <height>461</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_setting">
     <property name="geometry">
      <rect>
@@ -159,6 +52,181 @@ border-radius: 3px
     <property name="text">
      <string>등급 통계 저장</string>
     </property>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>10</y>
+      <width>501</width>
+      <height>411</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>581</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(66, 66, 66);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>561</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="data_box">
+      <item>
+       <layout class="QHBoxLayout" name="data_box1" stretch="1,2">
+        <item>
+         <widget class="QLabel" name="length_name">
+          <property name="styleSheet">
+           <string notr="true">background-color : #58D3F7;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;</string>
+          </property>
+          <property name="text">
+           <string>길이</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="length_show">
+          <property name="styleSheet">
+           <string notr="true">background-color : #CEF6F5;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;</string>
+          </property>
+          <property name="text">
+           <string>show_length</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::AutoText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="data_box2" stretch="1,2">
+        <item>
+         <widget class="QLabel" name="time_name">
+          <property name="styleSheet">
+           <string notr="true">background-color : #58D3F7;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;
+</string>
+          </property>
+          <property name="text">
+           <string>측정 시간</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="time_show">
+          <property name="styleSheet">
+           <string notr="true">background-color : #CEF6F5;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;
+
+</string>
+          </property>
+          <property name="text">
+           <string>show_time</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="data_box2_2" stretch="1,2">
+        <item>
+         <widget class="QLabel" name="time_name_2">
+          <property name="styleSheet">
+           <string notr="true">background-color : #58D3F7;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;
+</string>
+          </property>
+          <property name="text">
+           <string>갯수 카운트</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="time_show_2">
+          <property name="styleSheet">
+           <string notr="true">background-color : #CEF6F5;
+color : balck;
+border-style: solid;
+border-width: 2px;
+border-color: black;
+border-radius: 3px;
+font: 18pt &quot;맑은 고딕&quot;
+</string>
+          </property>
+          <property name="text">
+           <string>show_count</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

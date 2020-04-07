@@ -41,6 +41,8 @@ private:
 
     setting_dialog *setting_dialo;
 
+    void count_eel(eel_data data);
+
     QTimer *timer;
     cv::VideoCapture main_cap;
     cv::Mat cam_input;

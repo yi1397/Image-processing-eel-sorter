@@ -56,5 +56,7 @@ private:
     bool detected = false;
 
     clock_t begin_t, end_t;
+
+    int eel_count = 0;
 };
 #endif // MAINWINDOW_H

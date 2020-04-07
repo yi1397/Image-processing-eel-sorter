@@ -11,13 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     bool success = false;
 
-    ui->centralwidget->setStyleSheet("background-color : white");
-
-    ui->time_name->setFont(QFont("맑은 고딕", 18));
-    ui->time_show->setFont(QFont("맑은 고딕", 18));
-    ui->length_name->setFont(QFont("맑은 고딕", 18));
-    ui->length_show->setFont(QFont("맑은 고딕", 18));
-
     try {
         user_setting = get_setting_from_file("D:/eel_sorter/eel_sorter/set.dat");
     } catch (const char* e_message) {
@@ -48,10 +41,11 @@ void MainWindow::get_setting(setting_data set)
 
 void MainWindow::find_eel()
 {
+    if(detected) return;
     begin_t = clock();
     main_cap.read(cam_input);
 
-    if(detect_eel(cam_input, &user_setting) && !detected)
+    if(detect_eel(cam_input, &user_setting))
     {
         detected = true;
         QTimer::singleShot(user_setting.detect_delay, this, SLOT(update_eel()));
@@ -62,6 +56,8 @@ void MainWindow::find_eel()
 
 void MainWindow::update_eel()
 {
+    eel_count++;
+
     cv::Mat detect_img;
     cv::undistort(cam_input, detect_img, cameraMatrix, distCoeffs);
 
@@ -76,6 +72,8 @@ void MainWindow::update_eel()
     //ui->time_show->setText(QString::number((double)end_t - begin_t) + "초");
 
     ui->time_show->setText(QString::number((double)detection_result.response_time/1000) + "초");
+
+    ui->count_show->setText(QString::number(eel_count));
 
     cv::cvtColor(detect_img, detect_img, cv::COLOR_BGR2RGB);
 

@@ -270,7 +270,7 @@
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_add_grade_2">
+    <widget class="QPushButton" name="pushButton_delete_rateing">
      <property name="geometry">
       <rect>
        <x>10</x>

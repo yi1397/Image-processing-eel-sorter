@@ -135,3 +135,12 @@ void setting_dialog::spinbox_changed()
         rating_SpinBox_list[i]->setMinimum(rating_SpinBox_list[i+1]->value());
     }
 }
+
+void setting_dialog::on_pushButton_delete_rateing_clicked()
+{
+    if(ui->listWidget_rating->count() != 0)
+    {
+        ui->listWidget_rating->takeItem(ui->listWidget_rating->count()-1);
+        rating_SpinBox_list.removeLast();
+    }
+}

@@ -42,6 +42,8 @@ private slots:
 
     void spinbox_changed();
 
+    void on_pushButton_delete_rateing_clicked();
+
 private:
     Ui::setting_dialog *ui;
 

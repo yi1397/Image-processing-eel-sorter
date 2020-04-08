@@ -21,6 +21,7 @@ typedef struct _setting_data
     int smoothing;
     int brightness;
     int saturation;
+    QList<int> ratings;
     cam_modes cam_mode;
 
 
@@ -30,7 +31,7 @@ typedef struct _setting_data
         smoothing(3),
         brightness(0),
         saturation(160),
-        cam_mode(VGA_MODE) {}
+        cam_mode(VGA_MODE) {ratings << 300;}
 
     _setting_data(const _setting_data& tmp) :
         detect_delay(tmp.detect_delay),
@@ -38,6 +39,7 @@ typedef struct _setting_data
         smoothing(tmp.smoothing),
         brightness(tmp.brightness),
         saturation(tmp.saturation),
+        ratings(tmp.ratings),
         cam_mode(tmp.cam_mode) {}
 
 } setting_data;

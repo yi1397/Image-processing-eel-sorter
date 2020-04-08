@@ -21,6 +21,11 @@ void setting_dialog::put_data_to_lineEdit(setting_data set)
     ui->lineEdit_detect_size->setText(QString::number(user_setting.min_size_to_detect));
     ui->lineEdit_detect_delay->setText(QString::number(user_setting.detect_delay));
     ui->lineEdit_detect_smoothing->setText(QString::number(user_setting.smoothing));
+
+    foreach(int rating, user_setting.ratings)
+    {
+        add_new_rating(rating);
+    }
 }
 
 void setting_dialog::get_setting_from_input(setting_data *set)
@@ -38,6 +43,11 @@ void setting_dialog::get_setting_from_input(setting_data *set)
     set->min_size_to_detect = min_size_to_detect;
     set->detect_delay = detect_delay;
     set->smoothing = smoothing;
+
+    foreach(QSpinBox* spinbox, rating_SpinBox_list)
+    {
+        set->ratings.append(spinbox->value());
+    }
 }
 
 void setting_dialog::apply_setting()
@@ -101,13 +111,16 @@ void setting_dialog::on_pushButton_make_new_settingfile_clicked()
 
 }
 
-void setting_dialog::on_pushButton_add_rating_clicked()
+void setting_dialog::add_new_rating(int rating)
 {
+
     QListWidgetItem* new_grade = new QListWidgetItem();
 
     QHBoxLayout* HLay = new QHBoxLayout();
     QLabel* Label_rating_name = new QLabel(QString::number(ui->listWidget_rating->count() + 1) + "등급", this);
     rating_SpinBox_list << new QSpinBox(this);
+    rating_SpinBox_list.last()->setMaximum(1000);
+    rating_SpinBox_list.last()->setValue(rating);
     connect(rating_SpinBox_list.last(), SIGNAL(valueChanged(int)),
                   this, SLOT(spinbox_changed()));
     QLabel* Label_text = new QLabel("mm 이상", this);
@@ -124,6 +137,11 @@ void setting_dialog::on_pushButton_add_rating_clicked()
 
     ui->listWidget_rating->addItem(new_grade);
     ui->listWidget_rating->setItemWidget(new_grade, rating_widget);
+}
+
+void setting_dialog::on_pushButton_add_rating_clicked()
+{
+    add_new_rating(0);
 }
 
 void setting_dialog::spinbox_changed()

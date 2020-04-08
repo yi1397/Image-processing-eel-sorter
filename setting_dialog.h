@@ -53,8 +53,9 @@ private:
 
     void apply_setting();
 
+    void add_new_rating(int rating);
+
     QList<QSpinBox*> rating_SpinBox_list;
-    std::vector<int> ratings;
 };
 
 #endif // SETTING_DIALOG_H

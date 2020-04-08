@@ -106,16 +106,17 @@ void setting_dialog::on_pushButton_add_rating_clicked()
     QListWidgetItem* new_grade = new QListWidgetItem();
 
     QHBoxLayout* HLay = new QHBoxLayout();
-    QLabel* Label_rating_name = new QLabel(QString::number(ui->listWidget_rating->count() + 1) + "등급");
-    rating_SpinBox_list << new QSpinBox();
+    QLabel* Label_rating_name = new QLabel(QString::number(ui->listWidget_rating->count() + 1) + "등급", this);
+    rating_SpinBox_list << new QSpinBox(this);
     connect(rating_SpinBox_list.last(), SIGNAL(valueChanged(int)),
                   this, SLOT(spinbox_changed()));
-    QLabel* Label_text = new QLabel("mm 이상");
+    QLabel* Label_text = new QLabel("mm 이상", this);
     HLay->addWidget(Label_rating_name);
     HLay->addWidget(rating_SpinBox_list.last());
     HLay->addWidget(Label_text);
 
-    QWidget* rating_widget = new QWidget();
+
+    QWidget* rating_widget = new QWidget(this);
     rating_widget->setLayout(HLay);
     rating_widget->setFixedHeight(50);
 

@@ -93,6 +93,7 @@ void MainWindow::on_pushButton_setting_clicked()
     connect(this,SIGNAL(send_setting(setting_data)), setting_dialo, SLOT(put_data_to_lineEdit(setting_data)));
 
     emit send_setting(user_setting);
+
 }
 
 void MainWindow::count_eel(eel_data data)

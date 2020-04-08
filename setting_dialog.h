@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QSpinBox>
+#include <QList>
 
 #include "setting_control.h"
 
@@ -36,7 +38,9 @@ private slots:
 
     void on_pushButton_make_new_settingfile_clicked();
 
-    void on_pushButton_add_grade_clicked();
+    void on_pushButton_add_rating_clicked();
+
+    void spinbox_changed();
 
 private:
     Ui::setting_dialog *ui;
@@ -46,6 +50,9 @@ private:
     void get_setting_from_input(setting_data *set);
 
     void apply_setting();
+
+    QList<QSpinBox*> rating_SpinBox_list;
+    std::vector<int> ratings;
 };
 
 #endif // SETTING_DIALOG_H

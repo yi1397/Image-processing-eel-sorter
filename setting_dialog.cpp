@@ -101,23 +101,36 @@ void setting_dialog::on_pushButton_make_new_settingfile_clicked()
 
 }
 
-void setting_dialog::on_pushButton_add_grade_clicked()
+void setting_dialog::on_pushButton_add_rating_clicked()
 {
     QListWidgetItem* new_grade = new QListWidgetItem();
 
     QHBoxLayout* HLay = new QHBoxLayout();
-    QLabel* Labed_grade_name = new QLabel(QString::number(ui->listWidget_grade->count() + 1) + "등급");
-    QPushButton* PushButton_delete = new QPushButton();
-    PushButton_delete->setText("삭제");
-    HLay->addWidget(Labed_grade_name);
-    HLay->addWidget(PushButton_delete);
+    QLabel* Label_rating_name = new QLabel(QString::number(ui->listWidget_rating->count() + 1) + "등급");
+    rating_SpinBox_list << new QSpinBox();
+    connect(rating_SpinBox_list.last(), SIGNAL(valueChanged(int)),
+                  this, SLOT(spinbox_changed()));
+    QLabel* Label_text = new QLabel("mm 이상");
+    HLay->addWidget(Label_rating_name);
+    HLay->addWidget(rating_SpinBox_list.last());
+    HLay->addWidget(Label_text);
 
-    QWidget* grade_widget = new QWidget();
-    grade_widget->setLayout(HLay);
-    grade_widget->setFixedHeight(50);
+    QWidget* rating_widget = new QWidget();
+    rating_widget->setLayout(HLay);
+    rating_widget->setFixedHeight(50);
 
-    new_grade->setSizeHint(grade_widget->sizeHint());
+    new_grade->setSizeHint(rating_widget->sizeHint());
 
-    ui->listWidget_grade->addItem(new_grade);
-    ui->listWidget_grade->setItemWidget(new_grade, grade_widget);
+    ui->listWidget_rating->addItem(new_grade);
+    ui->listWidget_rating->setItemWidget(new_grade, rating_widget);
+}
+
+void setting_dialog::spinbox_changed()
+{
+    for (int i = 1; i < rating_SpinBox_list.count(); ++i) {
+        rating_SpinBox_list[i]->setMaximum(rating_SpinBox_list[i-1]->value());
+    }
+    for (int i = 0; i < rating_SpinBox_list.count()-1; ++i) {
+        rating_SpinBox_list[i]->setMinimum(rating_SpinBox_list[i+1]->value());
+    }
 }

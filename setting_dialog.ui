@@ -238,7 +238,7 @@
     <attribute name="title">
      <string>등급 분류</string>
     </attribute>
-    <widget class="QPushButton" name="pushButton_add_grade">
+    <widget class="QPushButton" name="pushButton_add_rating">
      <property name="geometry">
       <rect>
        <x>350</x>
@@ -251,7 +251,7 @@
       <string>등급 추가</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_grade">
+    <widget class="QListWidget" name="listWidget_rating">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -268,6 +268,19 @@
      </property>
      <property name="sortingEnabled">
       <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_add_grade_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>370</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>등급 삭제</string>
      </property>
     </widget>
    </widget>

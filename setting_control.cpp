@@ -16,6 +16,8 @@ void string_to_set_ptr(
     map->insert(
         std::make_pair("saturation",&set->saturation));
     map->insert(
+                std::make_pair("rating",&set->ratings));
+    map->insert(
         std::make_pair("cam_mode",&set->cam_mode));
 }
 
@@ -42,12 +44,19 @@ setting_data get_setting_from_file(const char* path)
 
         if(string_to_value.count(file_data_name))
         {
-            if(file_data_name == "smoothing")
+            if(file_data_name == "rating")
             {
-                if(file_value % 2 == 0) throw "설정값이 옳지 않습니다";
+                ((QList<int>*)string_to_value[file_data_name])->append(file_value);
             }
+            else
+            {
+                if(file_data_name == "smoothing")
+                {
+                    if(file_value % 2 == 0) throw "설정값이 옳지 않습니다";
+                }
 
-            *(int*)string_to_value[file_data_name] = file_value;
+                *(int*)string_to_value[file_data_name] = file_value;
+            }
         }
     }
 
@@ -66,7 +75,19 @@ void make_setting_file(const char* path, setting_data* set)
         data!=string_to_value.end();
         data++)
     {
-        setting_file << data->first << " "
-                     << *(int*)data->second << std::endl;
+        if(data->first == "rating")
+        {
+            foreach(auto rating, *(QList<int>*)data->second)
+            {
+                setting_file << data->first << " "
+                             << rating << std::endl;
+            }
+        }
+
+        else
+        {
+            setting_file << data->first << " "
+                         << *(int*)data->second << std::endl;
+        }
     }
 }

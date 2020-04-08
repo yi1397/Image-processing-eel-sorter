@@ -43,7 +43,7 @@ void setting_dialog::get_setting_from_input(setting_data *set)
     set->min_size_to_detect = min_size_to_detect;
     set->detect_delay = detect_delay;
     set->smoothing = smoothing;
-
+    set->ratings.clear();
     foreach(QSpinBox* spinbox, rating_SpinBox_list)
     {
         set->ratings.append(spinbox->value());

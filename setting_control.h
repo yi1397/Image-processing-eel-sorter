@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include <map>
+#include <QList>
 
 
 enum cam_modes
@@ -31,7 +32,7 @@ typedef struct _setting_data
         smoothing(3),
         brightness(0),
         saturation(160),
-        cam_mode(VGA_MODE) {ratings << 300;}
+        cam_mode(VGA_MODE) {}
 
     _setting_data(const _setting_data& tmp) :
         detect_delay(tmp.detect_delay),

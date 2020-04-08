@@ -1,7 +1,7 @@
 brightness 0
 cam_mode 640480
-detect_delay 100
-min_size_to_detect 10000
+detect_delay 200
+min_size_to_detect 305000
 rating 300
 rating 200
 rating 0

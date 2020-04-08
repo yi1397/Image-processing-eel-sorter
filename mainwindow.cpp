@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
         timer->start(0);
     }
+    reset_rating_count();
     set_result_table();
 }
 
@@ -33,10 +34,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::reset_rating_count()
+{
+    rating_count = new int[user_setting.ratings.count()];
+    memset(rating_count, 0, user_setting.ratings.count() * sizeof(int));
+}
 
 void MainWindow::get_setting(setting_data set)
 {
     user_setting = set;
+    delete rating_count;
+    reset_rating_count();
     set_result_table();
 }
 
@@ -66,7 +74,7 @@ void MainWindow::update_eel()
     detection_result =
             measure_eel_length(detect_img, &user_setting);
 
-    ui->length_show->setText(QString("%1 cm").arg(detection_result.length));
+    ui->length_show->setText(QString("%1 mm").arg(detection_result.length));
 
 
     end_t = clock();
@@ -83,6 +91,8 @@ void MainWindow::update_eel()
     ui->cam_label->setPixmap(QPixmap::fromImage(qt_cam_img).scaled(ui->cam_label->width(), ui->cam_label->height(), Qt::KeepAspectRatio));
     //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
+    count_eel(detection_result);
+
     detected = false;
 }
 
@@ -95,6 +105,7 @@ void MainWindow::set_result_table()
     for(int i=0; i < user_setting.ratings.count(); ++i)
     {
         ui->tableWidget_result->setItem(i, 0, new QTableWidgetItem(QString::number(i+1) + "등급"));
+        ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
     }
 }
 
@@ -112,5 +123,13 @@ void MainWindow::on_pushButton_setting_clicked()
 
 void MainWindow::count_eel(eel_data data)
 {
-
+    for(int i = 0; i < user_setting.ratings.count(); ++i)
+    {
+        if(user_setting.ratings[i] < data.length)
+        {
+            rating_count[i]++;
+            ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
+            return;
+        }
+    }
 }

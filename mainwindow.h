@@ -57,9 +57,11 @@ private:
 
     int eel_count = 0;
 
-    QList<int> rating_count;
+    int* rating_count;
 
     void count_eel(eel_data data);
+
+    void reset_rating_count();
 
     void set_result_table();
 };

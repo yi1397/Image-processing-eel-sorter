@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButton_make_new_settingfile_clicked();
 
+    void on_pushButton_add_grade_clicked();
+
 private:
     Ui::setting_dialog *ui;
 

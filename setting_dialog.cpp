@@ -100,3 +100,24 @@ void setting_dialog::on_pushButton_make_new_settingfile_clicked()
     }
 
 }
+
+void setting_dialog::on_pushButton_add_grade_clicked()
+{
+    QListWidgetItem* new_grade = new QListWidgetItem();
+
+    QHBoxLayout* HLay = new QHBoxLayout();
+    QLabel* Labed_grade_name = new QLabel(QString::number(ui->listWidget_grade->count() + 1) + "등급");
+    QPushButton* PushButton_delete = new QPushButton();
+    PushButton_delete->setText("삭제");
+    HLay->addWidget(Labed_grade_name);
+    HLay->addWidget(PushButton_delete);
+
+    QWidget* grade_widget = new QWidget();
+    grade_widget->setLayout(HLay);
+    grade_widget->setFixedHeight(50);
+
+    new_grade->setSizeHint(grade_widget->sizeHint());
+
+    ui->listWidget_grade->addItem(new_grade);
+    ui->listWidget_grade->setItemWidget(new_grade, grade_widget);
+}

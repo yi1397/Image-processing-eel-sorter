@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
         timer->start(0);
     }
+    set_result_table();
 }
 
 MainWindow::~MainWindow()
@@ -36,6 +37,7 @@ MainWindow::~MainWindow()
 void MainWindow::get_setting(setting_data set)
 {
     user_setting = set;
+    set_result_table();
 }
 
 
@@ -82,6 +84,18 @@ void MainWindow::update_eel()
     //ui->cam_label->resize(ui->cam_label->pixmap()->size());
 
     detected = false;
+}
+
+void MainWindow::set_result_table()
+{
+    ui->tableWidget_result->setAlternatingRowColors(true);
+    ui->tableWidget_result->setColumnCount(2);
+    ui->tableWidget_result->setHorizontalHeaderLabels(QString("등급;수량").split(";"));
+    ui->tableWidget_result->setRowCount(user_setting.ratings.count());
+    for(int i=0; i < user_setting.ratings.count(); ++i)
+    {
+        ui->tableWidget_result->setItem(i, 0, new QTableWidgetItem(QString::number(i+1) + "등급"));
+    }
 }
 
 void MainWindow::on_pushButton_setting_clicked()

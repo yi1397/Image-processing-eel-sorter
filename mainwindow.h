@@ -41,8 +41,6 @@ private:
 
     setting_dialog *setting_dialo;
 
-    void count_eel(eel_data data);
-
     QTimer *timer;
     cv::VideoCapture main_cap;
     cv::Mat cam_input;
@@ -58,5 +56,11 @@ private:
     clock_t begin_t, end_t;
 
     int eel_count = 0;
+
+    QList<int> rating_count;
+
+    void count_eel(eel_data data);
+
+    void set_result_table();
 };
 #endif // MAINWINDOW_H

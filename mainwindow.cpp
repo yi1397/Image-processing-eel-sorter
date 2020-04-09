@@ -18,11 +18,12 @@ MainWindow::MainWindow(QWidget *parent)
         make_setting_file("D:/eel_sorter/eel_sorter/set.dat", &user_setting);
     }
 
+    connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
+
     success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
 
     if(success)
     {
-        connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
         timer->start(0);
     }
     reset_rating_count();
@@ -54,6 +55,13 @@ void MainWindow::find_eel()
     if(detected) return;
     begin_t = clock();
     main_cap.read(cam_input);
+
+    if(cam_input.empty())
+    {
+        QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");
+        timer->stop();
+        return;
+    }
 
     if(detect_eel(cam_input, &user_setting))
     {
@@ -131,5 +139,22 @@ void MainWindow::count_eel(eel_data data)
             ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
             return;
         }
+    }
+}
+
+void MainWindow::on_pushButton_camera_reset_clicked()
+{
+    bool success = false;
+
+    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
+
+    if(success)
+    {
+        timer->start(0);
+    }
+
+    else
+    {
+        QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");
     }
 }

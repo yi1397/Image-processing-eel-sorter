@@ -34,6 +34,8 @@ private slots:
 
     void on_pushButton_setting_clicked();
 
+    void on_pushButton_camera_reset_clicked();
+
 private:
     Ui::MainWindow *ui;
 

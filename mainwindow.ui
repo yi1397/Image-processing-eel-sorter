@@ -20,19 +20,26 @@
       <x>20</x>
       <y>10</y>
       <width>601</width>
-      <height>461</height>
+      <height>451</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 36pt &quot;맑은 고딕&quot;;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
     <property name="text">
-     <string>show_img</string>
+     <string>카메라 연결 없음</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_setting">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>900</x>
       <y>590</y>
-      <width>191</width>
+      <width>231</width>
       <height>81</height>
      </rect>
     </property>
@@ -43,9 +50,9 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>900</x>
       <y>490</y>
-      <width>191</width>
+      <width>231</width>
       <height>81</height>
      </rect>
     </property>
@@ -114,7 +121,7 @@ border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;</string>
           </property>
           <property name="text">
-           <string>show_length</string>
+           <string>측정안됨</string>
           </property>
           <property name="textFormat">
            <enum>Qt::AutoText</enum>
@@ -162,7 +169,7 @@ font: 18pt &quot;맑은 고딕&quot;
 </string>
           </property>
           <property name="text">
-           <string>show_time</string>
+           <string>측정안됨</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -206,7 +213,7 @@ font: 18pt &quot;맑은 고딕&quot;
 </string>
           </property>
           <property name="text">
-           <string>show_count</string>
+           <string>측정안됨</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -257,6 +264,32 @@ font: 18pt &quot;맑은 고딕&quot;
     <row/>
     <column/>
     <column/>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>490</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>카메라 연결 설정</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_camera_reset">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>590</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>카메라 다시 연결</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

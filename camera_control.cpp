@@ -7,8 +7,10 @@ bool camera_init(
         cam_modes cam_mode
         )
 {
-    *cap = cv::VideoCapture(0 + cv::CAP_DSHOW);
+    *cap = cv::VideoCapture(1 + cv::CAP_DSHOW);
     
+    if(!cap->isOpened()) return false;
+
     switch (cam_mode) {
     case qVGA_MODE:
     {

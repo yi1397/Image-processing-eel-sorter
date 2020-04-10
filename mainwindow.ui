@@ -70,7 +70,7 @@ font: 36pt &quot;맑은 고딕&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(66, 66, 66);</string>
+     <string notr="true">background-color: rgb(190, 190, 190);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -93,10 +93,10 @@ font: 36pt &quot;맑은 고딕&quot;;</string>
         <item>
          <widget class="QLabel" name="length_name">
           <property name="styleSheet">
-           <string notr="true">background-color : #58D3F7;
+           <string notr="true">background-color : #ace9fc;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;</string>
@@ -112,10 +112,10 @@ font: 18pt &quot;맑은 고딕&quot;</string>
         <item>
          <widget class="QLabel" name="length_show">
           <property name="styleSheet">
-           <string notr="true">background-color : #CEF6F5;
+           <string notr="true">background-color : #e7fbfb;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;</string>
@@ -138,10 +138,10 @@ font: 18pt &quot;맑은 고딕&quot;</string>
         <item>
          <widget class="QLabel" name="time_name">
           <property name="styleSheet">
-           <string notr="true">background-color : #58D3F7;
+           <string notr="true">background-color : #ace9fc;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;
@@ -158,14 +158,13 @@ font: 18pt &quot;맑은 고딕&quot;
         <item>
          <widget class="QLabel" name="time_show">
           <property name="styleSheet">
-           <string notr="true">background-color : #CEF6F5;
+           <string notr="true">background-color : #e7fbfb;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;
-
 </string>
           </property>
           <property name="text">
@@ -183,10 +182,10 @@ font: 18pt &quot;맑은 고딕&quot;
         <item>
          <widget class="QLabel" name="count_name">
           <property name="styleSheet">
-           <string notr="true">background-color : #58D3F7;
+           <string notr="true">background-color : #ace9fc;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;
@@ -203,13 +202,14 @@ font: 18pt &quot;맑은 고딕&quot;
         <item>
          <widget class="QLabel" name="count_show">
           <property name="styleSheet">
-           <string notr="true">background-color : #CEF6F5;
+           <string notr="true">background-color : #e7fbfb;
 color : balck;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-color: black;
 border-radius: 3px;
 font: 18pt &quot;맑은 고딕&quot;
+
 </string>
           </property>
           <property name="text">
@@ -240,6 +240,9 @@ font: 18pt &quot;맑은 고딕&quot;
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;맑은 고딕&quot;;</string>
+    </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
     </property>
@@ -260,6 +263,12 @@ font: 18pt &quot;맑은 고딕&quot;
     </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>240</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>50</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>60</number>
     </attribute>
     <row/>
     <column/>

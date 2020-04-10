@@ -61,7 +61,7 @@ void MainWindow::find_eel()
     if(detected) return;
     begin_t = clock();
     main_cap.read(cam_input);
-    //cam_input = cv::imread("D:/eel_sorter/test_img/eel_1/419_419.png");
+    cam_input = cv::imread("D:/eel_sorter/test_img/eel_1/419_419.png");
     if(cam_input.empty())
     {
         QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");

@@ -139,14 +139,16 @@ void MainWindow::count_eel(eel_data data)
 {
     for(int i = 0; i < user_setting.ratings.count(); ++i)
     {
-        if(user_setting.ratings[i] < data.length)
+        if(user_setting.ratings[i] <= data.length)
         {
             rating_count[i]++;
             ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
-            serial->send_data(QString::number(i));
+            serial->send_data(QString::number(i+1));
             return;
         }
     }
+
+    serial->send_data(QString::number(-1));
 }
 
 void MainWindow::on_pushButton_camera_reset_clicked()

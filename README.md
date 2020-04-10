@@ -12,6 +12,7 @@
 <img src="./screenshot/setting2.PNG" height="270" width="250">
 <img src="./screenshot/setting3.PNG" height="270" width="250">
 </div>
+설정화면
 
 ## 라이브러리
 OpenCV

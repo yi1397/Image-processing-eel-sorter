@@ -58,7 +58,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
           <item>
-           <widget class="QSpinBox" name="spinBox"/>
+           <widget class="QSpinBox" name="spinBox_cam_number"/>
           </item>
           <item>
            <spacer name="horizontalSpacer">

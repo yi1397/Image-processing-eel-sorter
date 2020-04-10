@@ -4,14 +4,14 @@ bool camera_init(
         cv::VideoCapture* cap,
         cv::Mat* cameraMatrix,
         cv::Mat* distCoeffs,
-        cam_modes cam_mode
+        setting_data* set
         )
 {
-    *cap = cv::VideoCapture(0 + cv::CAP_DSHOW);
+    *cap = cv::VideoCapture(set->cam_number + cv::CAP_DSHOW);
     
     if(!cap->isOpened()) return false;
 
-    switch (cam_mode) {
+    switch (set->cam_mode) {
     case qVGA_MODE:
     {
         cap->set(cv::CAP_PROP_FRAME_WIDTH, 320); // 카메라 영상 가로 크기 설정

@@ -17,6 +17,7 @@ enum cam_modes
 
 typedef struct _setting_data
 {
+    int cam_number;
     int detect_delay;
     int min_size_to_detect;
     int smoothing;
@@ -27,6 +28,7 @@ typedef struct _setting_data
 
 
     _setting_data() :
+        cam_number(0),
         detect_delay(100),
         min_size_to_detect(10000),
         smoothing(3),
@@ -35,6 +37,7 @@ typedef struct _setting_data
         cam_mode(VGA_MODE) {}
 
     _setting_data(const _setting_data& tmp) :
+        cam_number(tmp.cam_number),
         detect_delay(tmp.detect_delay),
         min_size_to_detect(tmp.min_size_to_detect),
         smoothing(tmp.smoothing),

@@ -6,6 +6,8 @@ void string_to_set_ptr(
 )
 {
     map->insert(
+        std::make_pair("cam_number",&set->cam_number));
+    map->insert(
         std::make_pair("detect_delay",&set->detect_delay));
     map->insert(
         std::make_pair("min_size_to_detect",&set->min_size_to_detect));

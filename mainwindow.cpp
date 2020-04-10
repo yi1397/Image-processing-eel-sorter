@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(timer, SIGNAL(timeout()), this, SLOT(find_eel()));
 
-    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
+    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, &user_setting);
 
     if(success)
     {
@@ -159,7 +159,7 @@ void MainWindow::on_pushButton_camera_reset_clicked()
 {
     bool success = false;
 
-    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, VGA_MODE);
+    success = camera_init(&main_cap, &cameraMatrix, &distCoeffs, &user_setting);
 
     if(success)
     {

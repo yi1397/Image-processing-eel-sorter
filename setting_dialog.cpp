@@ -17,6 +17,7 @@ void setting_dialog::put_data_to_lineEdit(setting_data set)
 {
     user_setting = set;
 
+    ui->spinBox_cam_number->setValue(user_setting.cam_number);
     ui->lineEdit_detect_saturation->setText(QString::number(user_setting.saturation));
     ui->lineEdit_detect_size->setText(QString::number(user_setting.min_size_to_detect));
     ui->lineEdit_detect_delay->setText(QString::number(user_setting.detect_delay));
@@ -31,7 +32,7 @@ void setting_dialog::put_data_to_lineEdit(setting_data set)
 void setting_dialog::get_setting_from_input(setting_data *set)
 {
 
-
+    int cam_number = ui->spinBox_cam_number->value();
     int saturation = ui->lineEdit_detect_saturation->text().toUInt();
     int min_size_to_detect = ui->lineEdit_detect_size->text().toInt();
     int detect_delay = ui->lineEdit_detect_delay->text().toUInt();
@@ -39,6 +40,7 @@ void setting_dialog::get_setting_from_input(setting_data *set)
 
     if(smoothing % 2 ==0) throw "윤곽선 스무딩의 값은 홀수여야합니다";
 
+    set->cam_number = cam_number;
     set->saturation = saturation;
     set->min_size_to_detect = min_size_to_detect;
     set->detect_delay = detect_delay;

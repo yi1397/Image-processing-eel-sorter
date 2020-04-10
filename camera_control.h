@@ -11,7 +11,7 @@ bool camera_init(
         cv::VideoCapture* cap,
         cv::Mat* cameraMatrix,
         cv::Mat* distCoeffs,
-        cam_modes cam_mode
+        setting_data* set
         );
 
 

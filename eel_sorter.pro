@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,6 +20,7 @@ SOURCES += \
     eel_detect.cpp \
     main.cpp \
     mainwindow.cpp \
+    serial_control.cpp \
     setting_control.cpp \
     setting_dialog.cpp
 
@@ -27,6 +28,7 @@ HEADERS += \
     camera_control.h \
     eel_detect.h \
     mainwindow.h \
+    serial_control.h \
     setting_control.h \
     setting_dialog.h
 

@@ -269,20 +269,20 @@ font: 18pt &quot;맑은 고딕&quot;
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>490</y>
+      <y>590</y>
       <width>231</width>
       <height>81</height>
      </rect>
     </property>
     <property name="text">
-     <string>카메라 연결 설정</string>
+     <string>시리얼 포트 설정</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_camera_reset">
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>590</y>
+      <y>490</y>
       <width>231</width>
       <height>81</height>
      </rect>

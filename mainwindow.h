@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 
+#include "serial_control.h"
 #include "camera_control.h"
 #include "eel_detect.h"
 #include "setting_dialog.h"
@@ -60,6 +61,8 @@ private:
     int eel_count = 0;
 
     int* rating_count;
+
+    serial_control* serial;
 
     void count_eel(eel_data data);
 

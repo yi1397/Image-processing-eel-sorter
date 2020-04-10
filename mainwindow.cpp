@@ -28,6 +28,12 @@ MainWindow::MainWindow(QWidget *parent)
     }
     reset_rating_count();
     set_result_table();
+
+    serial = new serial_control();
+    if(!serial->set_port())
+    {
+        QMessageBox::information(NULL, "시리얼 포트 연결안됨", "시리얼 포트 연결안됨");
+    }
 }
 
 MainWindow::~MainWindow()
@@ -137,6 +143,7 @@ void MainWindow::count_eel(eel_data data)
         {
             rating_count[i]++;
             ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
+            serial->send_data(QString::number(i));
             return;
         }
     }

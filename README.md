@@ -5,6 +5,11 @@
 
 ## 스크린샷
 ![screenshot](./screenshot/screenshot2.PNG) 
+실행화면
+
+<img src="./screenshot/setting1.PNG" height="270" width="250">
+<img src="./screenshot/setting2.PNG" height="270" width="250">
+<img src="./screenshot/setting3.PNG" height="270" width="250">
 
 ## 라이브러리
 OpenCV

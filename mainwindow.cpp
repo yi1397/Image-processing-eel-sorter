@@ -43,8 +43,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::reset_rating_count()
 {
-    rating_count = new int[user_setting.ratings.count()];
-    memset(rating_count, 0, user_setting.ratings.count() * sizeof(int));
+    rating_count = new int[user_setting.ratings.count() + 1];
+    memset(rating_count, 0, (user_setting.ratings.count() + 1) * sizeof(int));
 }
 
 void MainWindow::get_setting(setting_data set)
@@ -115,12 +115,15 @@ void MainWindow::set_result_table()
     ui->tableWidget_result->setAlternatingRowColors(true);
     ui->tableWidget_result->setColumnCount(2);
     ui->tableWidget_result->setHorizontalHeaderLabels(QString("등급;수량").split(";"));
-    ui->tableWidget_result->setRowCount(user_setting.ratings.count());
+    ui->tableWidget_result->setRowCount(user_setting.ratings.count() + 1);
     for(int i=0; i < user_setting.ratings.count(); ++i)
     {
         ui->tableWidget_result->setItem(i, 0, new QTableWidgetItem(QString::number(i+1) + "등급"));
         ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
     }
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 0, new QTableWidgetItem("미달"));
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1, new QTableWidgetItem(rating_count[user_setting.ratings.count()]));
+
 }
 
 void MainWindow::on_pushButton_setting_clicked()
@@ -147,7 +150,8 @@ void MainWindow::count_eel(eel_data data)
             return;
         }
     }
-
+    rating_count[user_setting.ratings.count()]++;
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1, new QTableWidgetItem(QString::number(rating_count[user_setting.ratings.count()])));
     serial->send_data(QString::number(-1));
 }
 

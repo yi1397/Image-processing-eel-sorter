@@ -1,8 +1,5 @@
 #include "eel_detect.h"
 
-float px_to_cm_ratio = 1; // 1cm가 몇 픽셀인지 저장하는 변수
-
-
 template<typename T_P>
 inline auto calc_dist(T_P& A, T_P& B) -> decltype (T_P().x + T_P().y)
 // cv::Point 구조체를 파라미터로 받아서 두 cv::Point의 거리를 측정하는 함수
@@ -151,7 +148,7 @@ eel_data measure_eel_length(
         cv::line(input, minA, minB, cv::Scalar(0, 255, 0), 2);
         // 결과 이미지에 minA와 minB 사이를 표시해줌
 
-        length = round(detect_area / min_dist / px_to_cm_ratio);
+        length = round(detect_area / min_dist / set->px_to_mm_ratio);
         // 길이를 계산함
 
     }
@@ -161,7 +158,7 @@ eel_data measure_eel_length(
         cv::Scalar(255, 0, 0), 2, 8, hierarchy, 0, cv::Point());
     // 결과 이미지에 장어 윤곽선을 표시해줌
 
-    float area = round(detect_area / px_to_cm_ratio / px_to_cm_ratio);
+    float area = round(detect_area / set->px_to_mm_ratio / set->px_to_mm_ratio);
 
     end_t = clock();
 

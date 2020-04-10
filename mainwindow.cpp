@@ -61,7 +61,7 @@ void MainWindow::find_eel()
     if(detected) return;
     begin_t = clock();
     main_cap.read(cam_input);
-
+    //cam_input = cv::imread("D:/eel_sorter/test_img/eel_1/419_419.png");
     if(cam_input.empty())
     {
         QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");
@@ -121,8 +121,10 @@ void MainWindow::set_result_table()
         ui->tableWidget_result->setItem(i, 0, new QTableWidgetItem(QString::number(i+1) + "등급"));
         ui->tableWidget_result->setItem(i, 1, new QTableWidgetItem(QString::number(rating_count[i])));
     }
-    ui->tableWidget_result->setItem(user_setting.ratings.count(), 0, new QTableWidgetItem("미달"));
-    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1, new QTableWidgetItem(rating_count[user_setting.ratings.count()]));
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 0,
+                                    new QTableWidgetItem("미달"));
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1,
+                                    new QTableWidgetItem(QString::number(rating_count[user_setting.ratings.count()])));
 
 }
 
@@ -151,7 +153,8 @@ void MainWindow::count_eel(eel_data data)
         }
     }
     rating_count[user_setting.ratings.count()]++;
-    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1, new QTableWidgetItem(QString::number(rating_count[user_setting.ratings.count()])));
+    ui->tableWidget_result->setItem(user_setting.ratings.count(), 1,
+                                    new QTableWidgetItem(QString::number(rating_count[user_setting.ratings.count()])));
     serial->send_data(QString::number(-1));
 }
 

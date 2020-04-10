@@ -42,7 +42,7 @@
        <height>381</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1,1,1">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1,1,1,1">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1">
         <item>
@@ -120,6 +120,41 @@
              </size>
             </property>
            </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,1">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>배경 밝기 문턱값</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,1">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_detect_brightness">
+            <property name="styleSheet">
+             <string notr="true">background-color : white</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>[ 160 정도 ]</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>

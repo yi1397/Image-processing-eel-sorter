@@ -2,10 +2,6 @@
 #include "camera_control.h"
 
 #include <QApplication>
-#include <qtimer.h>
-#include <QLabel>
-#include <QPixmap>
-#include <QImage>
 
 #include <opencv2/opencv.hpp>
 

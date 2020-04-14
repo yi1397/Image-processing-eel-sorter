@@ -274,7 +274,7 @@ font: 18pt &quot;맑은 고딕&quot;
     <column/>
     <column/>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_setting_serial">
     <property name="geometry">
      <rect>
       <x>650</x>

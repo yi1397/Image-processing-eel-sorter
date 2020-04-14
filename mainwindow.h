@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 
+#include "serial_dialog.h"
 #include "serial_control.h"
 #include "camera_control.h"
 #include "eel_detect.h"
@@ -37,12 +38,16 @@ private slots:
 
     void on_pushButton_camera_reset_clicked();
 
+    void on_pushButton_setting_serial_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     setting_data user_setting;
 
     setting_dialog *setting_dialo;
+
+    serial_Dialog *serial_dialo;
 
     QTimer *timer;
     cv::VideoCapture main_cap;

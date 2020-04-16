@@ -177,5 +177,9 @@ void MainWindow::on_pushButton_camera_reset_clicked()
 
 void MainWindow::on_pushButton_connet_serial_clicked()
 {
+    if(!serial->set_port(&user_setting.portName))
+    {
+        QMessageBox::information(NULL, "시리얼 포트 연결안됨", "시리얼 포트 연결안됨");
+    }
     return;
 }

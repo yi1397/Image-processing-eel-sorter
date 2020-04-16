@@ -9,8 +9,6 @@ setting_dialog::setting_dialog(QWidget *parent) :
     ui->setupUi(this);
 
     ui->comboBox_cam_mode->setEnabled(false);
-
-    ui->comboBox_serial_list->addItems(serial_control::find_port());
 }
 
 setting_dialog::~setting_dialog()
@@ -21,6 +19,19 @@ setting_dialog::~setting_dialog()
 void setting_dialog::put_data_to_lineEdit(setting_data set)
 {
     user_setting = set;
+
+    QStringList ports = serial_control::find_port();
+
+    ports.append("No_port");
+
+
+    if(ports.count(set.portName) == 1)
+    {
+        ui->comboBox_serial_list->addItem(set.portName);
+        ports.removeAt(ports.indexOf(set.portName));
+    }
+
+    ui->comboBox_serial_list->addItems(ports);
 
     ui->spinBox_cam_number->setValue(user_setting.cam_number);
     ui->lineEdit_detect_brightness->setText(QString::number(user_setting.brightness));
@@ -37,7 +48,7 @@ void setting_dialog::put_data_to_lineEdit(setting_data set)
 
 void setting_dialog::get_setting_from_input(setting_data *set)
 {
-
+    QString portName = ui->comboBox_serial_list->currentText();
     int cam_number = ui->spinBox_cam_number->value();
     int brightness = ui->lineEdit_detect_brightness->text().toUInt();
     int saturation = ui->lineEdit_detect_saturation->text().toUInt();
@@ -47,6 +58,7 @@ void setting_dialog::get_setting_from_input(setting_data *set)
 
     if(smoothing % 2 ==0) throw "윤곽선 스무딩의 값은 홀수여야합니다";
 
+    set->portName = portName;
     set->cam_number = cam_number;
     set->brightness = brightness;
     set->saturation = saturation;

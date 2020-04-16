@@ -37,7 +37,7 @@ private slots:
 
     void on_pushButton_camera_reset_clicked();
 
-    void on_pushButton_conne_serial_clicked();
+    void on_pushButton_connet_serial_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -63,8 +63,6 @@ private:
     int eel_count = 0;
 
     int* rating_count;
-
-    QString port_name;
 
     serial_control* serial;
 

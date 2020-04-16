@@ -1,4 +1,5 @@
 #include "setting_dialog.h"
+#include "serial_control.h"
 #include "ui_setting_dialog.h"
 
 setting_dialog::setting_dialog(QWidget *parent) :

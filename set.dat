@@ -1,10 +1,8 @@
-brightness 55
+brightness 0
 cam_mode 640480
-cam_number 1
-detect_delay 1500
-min_size_to_detect 0
-rating 300
-rating 200
-rating 100
-saturation 2
+cam_number 0
+detect_delay 100
+min_size_to_detect 10000
+portName No_port
+saturation 160
 smoothing 3

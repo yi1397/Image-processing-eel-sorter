@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     set_result_table();
 
     serial = new serial_control();
-    if(!serial->set_port())
+    if(!serial->set_port(&user_setting.portName))
     {
         QMessageBox::information(NULL, "시리얼 포트 연결안됨", "시리얼 포트 연결안됨");
     }
@@ -173,4 +173,9 @@ void MainWindow::on_pushButton_camera_reset_clicked()
     {
         QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");
     }
+}
+
+void MainWindow::on_pushButton_connet_serial_clicked()
+{
+    return;
 }

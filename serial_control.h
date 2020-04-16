@@ -8,7 +8,7 @@ class serial_control
 public:
     serial_control();
 
-    bool set_port();
+    bool set_port(QString* portName);
 
     void send_data(QString data);
 

@@ -6,6 +6,8 @@ void string_to_set_ptr(
 )
 {
     map->insert(
+        std::make_pair("portName",&set->portName));
+    map->insert(
         std::make_pair("cam_number",&set->cam_number));
     map->insert(
         std::make_pair("detect_delay",&set->detect_delay));
@@ -42,16 +44,23 @@ setting_data get_setting_from_file(const char* path)
         int file_value;
 
         setting_file>>file_data_name;
-        setting_file>>file_value;
 
         if(string_to_value.count(file_data_name))
         {
             if(file_data_name == "rating")
             {
+                setting_file>>file_value;
                 ((QList<int>*)string_to_value[file_data_name])->append(file_value);
+            }
+            else if(file_data_name == "portName")
+            {
+                std::string portName;
+                setting_file>>portName;
+                *(QString*)string_to_value[file_data_name] = QString::fromStdString(portName);
             }
             else
             {
+                setting_file>>file_value;
                 if(file_data_name == "smoothing")
                 {
                     if(file_value % 2 == 0) throw "설정값이 옳지 않습니다";
@@ -84,6 +93,12 @@ void make_setting_file(const char* path, setting_data* set)
                 setting_file << data->first << " "
                              << rating << std::endl;
             }
+        }
+
+        else if(data->first == "portName")
+        {
+            setting_file << data->first << " "
+                         << (*(QString*)data->second).toStdString() << std::endl;
         }
 
         else

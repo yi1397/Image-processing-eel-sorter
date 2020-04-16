@@ -274,7 +274,7 @@ font: 18pt &quot;맑은 고딕&quot;
     <column/>
     <column/>
    </widget>
-   <widget class="QPushButton" name="pushButton_setting_serial">
+   <widget class="QPushButton" name="pushButton_connet_serial">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -284,7 +284,7 @@ font: 18pt &quot;맑은 고딕&quot;
      </rect>
     </property>
     <property name="text">
-     <string>시리얼 포트 설정</string>
+     <string>시리얼 포트 다시 연결</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_camera_reset">

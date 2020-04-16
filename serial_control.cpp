@@ -5,11 +5,11 @@ serial_control::serial_control()
     port = new QSerialPort();
 }
 
-bool serial_control::set_port()
+bool serial_control::set_port(QString portName)
 {
     delete port;
     port = new QSerialPort();
-    port->setPortName("COM9");
+    port->setPortName(portName);
     port->setBaudRate(QSerialPort::Baud9600);
     port->setDataBits(QSerialPort::Data8);
     port->setParity(QSerialPort::NoParity);

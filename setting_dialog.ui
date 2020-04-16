@@ -92,7 +92,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,1">
           <item>
-           <widget class="QComboBox" name="comboBox_cam_mode_2">
+           <widget class="QComboBox" name="comboBox_cam_mode">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -324,9 +324,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
+       <y>80</y>
        <width>431</width>
-       <height>351</height>
+       <height>281</height>
       </rect>
      </property>
      <property name="movement">
@@ -351,6 +351,35 @@
      <property name="text">
       <string>등급 삭제</string>
      </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>431</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,1">
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>시리얼 포트</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="2">
+        <item>
+         <widget class="QComboBox" name="comboBox_serial_list"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">

@@ -7,6 +7,10 @@ setting_dialog::setting_dialog(QWidget *parent) :
     ui(new Ui::setting_dialog)
 {
     ui->setupUi(this);
+
+    ui->comboBox_cam_mode->setEnabled(false);
+
+    ui->comboBox_serial_list->addItems(serial_control::find_port());
 }
 
 setting_dialog::~setting_dialog()

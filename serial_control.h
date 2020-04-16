@@ -11,6 +11,8 @@ public:
     bool set_port();
 
     void send_data(QString data);
+
+    QStringList find_port();
 private:
     QSerialPort* port;
 };

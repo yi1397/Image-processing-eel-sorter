@@ -174,11 +174,3 @@ void MainWindow::on_pushButton_camera_reset_clicked()
         QMessageBox::information(NULL, "카메라 없음", "카메라 연결에 실패했습니다");
     }
 }
-
-void MainWindow::on_pushButton_setting_serial_clicked()
-{
-    serial_dialo = new serial_Dialog(this);
-    serial_dialo->setModal(true);
-    serial_dialo->show();
-
-}

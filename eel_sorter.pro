@@ -21,7 +21,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     serial_control.cpp \
-    serial_dialog.cpp \
     setting_control.cpp \
     setting_dialog.cpp
 
@@ -30,13 +29,11 @@ HEADERS += \
     eel_detect.h \
     mainwindow.h \
     serial_control.h \
-    serial_dialog.h \
     setting_control.h \
     setting_dialog.h
 
 FORMS += \
     mainwindow.ui \
-    serial_dialog.ui \
     setting_dialog.ui
 
 TRANSLATIONS += \

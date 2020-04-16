@@ -16,7 +16,6 @@ bool serial_control::set_port()
     port->setStopBits(QSerialPort::OneStop);
     port->setFlowControl(QSerialPort::NoFlowControl);
 
-    find_port();
     if(!port->open(QIODevice::ReadWrite)) return false;
 
     return true;

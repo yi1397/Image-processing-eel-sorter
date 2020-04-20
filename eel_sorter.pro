@@ -20,6 +20,7 @@ SOURCES += \
     eel_detect.cpp \
     main.cpp \
     mainwindow.cpp \
+    recording_control.cpp \
     serial_control.cpp \
     setting_control.cpp \
     setting_dialog.cpp
@@ -28,6 +29,7 @@ HEADERS += \
     camera_control.h \
     eel_detect.h \
     mainwindow.h \
+    recording_control.h \
     serial_control.h \
     setting_control.h \
     setting_dialog.h

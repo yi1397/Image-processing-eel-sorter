@@ -47,7 +47,7 @@ font: 36pt &quot;맑은 고딕&quot;;</string>
      <string>설정</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_save_">
     <property name="geometry">
      <rect>
       <x>900</x>

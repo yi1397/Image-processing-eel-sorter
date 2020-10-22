@@ -37,6 +37,7 @@ void setting_dialog::put_data_to_lineEdit(setting_data set)
     ui->lineEdit_detect_brightness->setText(QString::number(user_setting.brightness));
     ui->lineEdit_detect_saturation->setText(QString::number(user_setting.saturation));
     ui->lineEdit_detect_size->setText(QString::number(user_setting.min_size_to_detect));
+    ui->lineEdit_px_to_mm->setText(QString::number(user_setting.px_to_mm_ratio));
     ui->lineEdit_detect_delay->setText(QString::number(user_setting.detect_delay));
     ui->lineEdit_detect_smoothing->setText(QString::number(user_setting.smoothing));
 
@@ -50,10 +51,11 @@ void setting_dialog::get_setting_from_input(setting_data *set)
 {
     QString portName = ui->comboBox_serial_list->currentText();
     int cam_number = ui->spinBox_cam_number->value();
-    int brightness = ui->lineEdit_detect_brightness->text().toUInt();
-    int saturation = ui->lineEdit_detect_saturation->text().toUInt();
+    int brightness = ui->lineEdit_detect_brightness->text().toInt();
+    int saturation = ui->lineEdit_detect_saturation->text().toInt();
     int min_size_to_detect = ui->lineEdit_detect_size->text().toInt();
-    int detect_delay = ui->lineEdit_detect_delay->text().toUInt();
+    float px_to_mm = ui->lineEdit_px_to_mm->text().toFloat();
+    int detect_delay = ui->lineEdit_detect_delay->text().toInt();
     int smoothing = ui->lineEdit_detect_smoothing->text().toInt();
 
     if(smoothing % 2 ==0) throw "윤곽선 스무딩의 값은 홀수여야합니다";
@@ -63,6 +65,7 @@ void setting_dialog::get_setting_from_input(setting_data *set)
     set->brightness = brightness;
     set->saturation = saturation;
     set->min_size_to_detect = min_size_to_detect;
+    set->px_to_mm_ratio = px_to_mm;
     set->detect_delay = detect_delay;
     set->smoothing = smoothing;
     set->ratings.clear();

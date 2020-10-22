@@ -14,6 +14,8 @@ void string_to_set_ptr(
     map->insert(
         std::make_pair("min_size_to_detect",&set->min_size_to_detect));
     map->insert(
+        std::make_pair("px_to_mm",&set->px_to_mm_ratio));
+    map->insert(
         std::make_pair("smoothing",&set->smoothing));
     map->insert(
         std::make_pair("brightness",&set->brightness));
@@ -58,6 +60,12 @@ setting_data get_setting_from_file(const char* path)
                 setting_file>>portName;
                 *(QString*)string_to_value[file_data_name] = QString::fromStdString(portName);
             }
+            else if(file_data_name == "px_to_mm")
+            {
+                float px_to_mm;
+                setting_file>>px_to_mm;
+                *(float*)string_to_value[file_data_name] = px_to_mm;
+            }
             else
             {
                 setting_file>>file_value;
@@ -99,6 +107,12 @@ void make_setting_file(const char* path, setting_data* set)
         {
             setting_file << data->first << " "
                          << (*(QString*)data->second).toStdString() << std::endl;
+        }
+
+        else if(data->first == "px_to_mm")
+        {
+            setting_file << data->first << " "
+                         << (float*)data->second << std::endl;
         }
 
         else

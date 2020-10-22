@@ -1,8 +1,9 @@
-brightness 0
+brightness 160
 cam_mode 640480
-cam_number 0
-detect_delay 100
+cam_number 1
+detect_delay 200
 min_size_to_detect 10000
-portName COM3
-saturation 160
+portName COM6
+px_to_mm 0000023E393F7AC8
+saturation 100
 smoothing 3
